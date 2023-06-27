@@ -1,0 +1,33 @@
+클래스 이름은 대문자로 시작하며 알파벳과 숫자, _를 쓸 수 있다
+변수 이름은 소문자로 시작하여 알파벳과 숫자, _를 쓸 수 있다.
+[변수] 
+프로그램 작업을 처리하기 위한 하나의 값을 저장하는 메모리 공간
+임의의 메모리 공간에 이름을 붙여 관리
+자바에선 다양한 타입은 저장할 수 없으며, 한가지 타입만 값으로 저장
+식별자라고도 불린다.
+  int          i         =       변수내용물
+(주머니 성질), (변수이름), (할당연산자), (주머니내용물) 
+int = 4byte, double = 8byte
+int로 변수 할당, 변수 할당한것에 수량 지정, System.out.println()으로 출력
+byte j = 20; (초기화)
+%c-문자, %s-문자열, %d-10진수, %x-16진수, %f-실수출력
+기본데이터 타입 = int, double, boolean, char 등등
+참조데이터 타입 = String, System등 앞에 나올 객체나 배열
+1.자료형 변수명; - 변수 선언과 할당을 분리시킴
+int num1; // 변수선언
+num1 = 10; //할당
+2.자료형 변수명 = 값; - 변수 선언과 동시에 초기화(할당)
+int num2 = 20;
+System.out.printf("num1 = %d, num2=%d\n", num1, num2);
+int num3=30, num4=40;
+System.out.printf("num3=%d \t num4=%d\n", num3, num4);
+//4. 자료형 변수1, 변수2, ..; 동일자료형 변수를 다수 선언
+int num5, num6;
+num5=50; num6=60;
+System.out.printf("num5=%d \t num6=%d\n", num5, num6);
+묵시적 형변환 : 작은 주머니의 데이터를 큰 주머니로 옮기는것
+int i = 10;    //4byte
+double d = i;  //d = 10.0; 묵시적인 형변환 8byte
+System.out.println("d = " + d);
+i = (int)10.6; //명시적인 형변환 - 데이터손실이 생길 수 있음
+System.out.println("i =" + i);
