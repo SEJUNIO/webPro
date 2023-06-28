@@ -1,6 +1,10 @@
 package com.lec.quiz;
-public class example {
+
+import java.util.Scanner;
+
+public class Example {
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 		int kor;
 		kor = 95;
 		System.out.println("kor = " + kor);
