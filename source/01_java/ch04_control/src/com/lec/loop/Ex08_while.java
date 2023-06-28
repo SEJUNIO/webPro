@@ -1,0 +1,26 @@
+package com.lec.loop;
+/* i가 1일때 누적합은 1이다.
+/* i가 2일때 누적합은 3이다.
+/* i가 3일때 누적합은 6이다.
+/* i가 4일때 누적합은 10이다.
+/* i가 5일때 누적합은 15이다.
+/* i가 6일때 누적합은 21이다.
+/* i가 7일때 누적합은 28이다.
+/* i가 8일때 누적합은 36이다.
+/* i가 9일때 누적합은 45이다.
+/* i가 10일때 누적합은 55이다.*/
+public class Ex08_while {
+	public static void main(String[] args) {
+		int tot=0;
+		int i=1;
+		while(i<10) {
+			tot += i;
+			System.out.printf("i가%d일 때까지 누적합은 %d이다\n", i, tot);
+			i++;
+		}
+//		for(int i=1; i<=10; i++) {
+//			tot += i; //tot=tot+1
+//			System.out.printf("i가%2d일 때까지 누적합은 %d이다\n", i, tot);
+//		
+	}
+}

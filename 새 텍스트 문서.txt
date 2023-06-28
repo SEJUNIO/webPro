@@ -5,3 +5,4 @@ sysout + ctrl + 스페이스 = 자동완성
 집가서 -jave version 쳐보고 학원 1.8.0_371
 집가서 -javac -version 학원 javac 1.8.0_371
 컨트롤 슬래시 한번에 주석 풀때는 반대로
+for문 포함 조건문은 무한에 빠지지 않도록 하기

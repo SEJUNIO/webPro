@@ -2,7 +2,7 @@ package com.lec.quiz;
 
 import java.util.Scanner;
 
-public class Example {
+public class example {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int kor;
