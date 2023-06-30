@@ -12,10 +12,10 @@ public class Quiz1 {
 				}
 			}
 		}
-		for(int i=0; i<arr.length; i++) {
-			System.out.println(arr[i]+"");
-			}
-		} //for -j		
-	}
+		for(int i=0; i<arr.length; i++) {                    //for(int a : arr) {
+			System.out.print(arr[i]+" ");                   //System.out.print(a + "\t");
+		}
+	} //for -j		
+}
 
 

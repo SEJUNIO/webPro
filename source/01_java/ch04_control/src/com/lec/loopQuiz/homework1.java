@@ -2,7 +2,11 @@ package com.lec.loopQuiz;
 
 import java.util.Scanner;
 //가위바위보 게임
+<<<<<<< HEAD
 public class homework1 {
+=======
+public class Homework1 {
+>>>>>>> 8ec08da9522e23faa3b266d5c549ab93305b654f
 	public static void main(String[] args) {
 	Scanner scanner = new Scanner(System.in);
 	while(true) {
