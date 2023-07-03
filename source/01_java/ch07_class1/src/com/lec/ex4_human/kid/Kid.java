@@ -5,6 +5,6 @@ public class Kid {
 	
 	public Kid(String name) {
 		this.name = name;
-		System.out.println("Kid ìƒì„±ì í•¨ìˆ˜");
+		System.out.println("Kid »ı¼ºÀÚ ÇÔ¼ö!");
 	}
 }
