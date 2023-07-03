@@ -1,5 +1,5 @@
 package com.lec.ex1_car;
-//클래스 => 객체(데이터,메소트) Car car = new Car();
+//클래스 => 객체(데이터,메소드) Car car = new Car();
 public class Car {
 	private String color; //차량색상    //private은 외부에선 쓸수 없으나
 	private int cc; // 차량 배기량

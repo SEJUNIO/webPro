@@ -1,5 +1,5 @@
 package com.lec.ex6_member;
-
+//생성자함수
 public class Member {
 	private String id;
 	private String pw;
