@@ -1,4 +1,4 @@
-package com.lec.Quiz;
+package com.lec.quiz;
 public class Quiz1TestMain {
 	public static void main(String[] args) {
 		Quiz1 s1 = new Quiz1("Á¤¿ì¼º", 90, 80,95);

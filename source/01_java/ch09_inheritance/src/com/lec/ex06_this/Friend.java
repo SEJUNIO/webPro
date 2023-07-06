@@ -1,4 +1,4 @@
-package com.lec.ex05_othis;
+package com.lec.ex06_this;
 // this. : 내 객체의 ~
 // this() : 현 클래스의 생성자 함수
 public class Friend {

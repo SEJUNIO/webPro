@@ -1,4 +1,4 @@
-package com.lec.Quiz;
+package com.lec.quiz;
 
 public class Quiz1 {
 	private int serialNo;  //이름 앞에 갈 번호

@@ -1,4 +1,4 @@
-package com.lec.ex05_othis;
+package com.lec.ex06_this;
 
 public class FriendTestMain {
 	public static void main(String[] args) {
