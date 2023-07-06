@@ -7,7 +7,7 @@ public class Quiz1TestMain {
 		Quiz1 s4 = new Quiz1("강동원", 95, 90,99);
 		Quiz1 s5 = new Quiz1("유아인", 90, 90,90);
 		Quiz1 [] quiz1= {s1,s2,s3,s4,s5};
-		String title[] = {"번호","이름","국어","영어","수학","총점","평균"};
+		String title[] = {"이름","국어","영어","수학","총점","평균"};
 		int [] total = new int[5];
 		line();
 		System.out.println("\t\t\t성적표");
