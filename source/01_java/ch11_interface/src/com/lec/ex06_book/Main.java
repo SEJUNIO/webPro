@@ -10,17 +10,17 @@ public class Main {
 					  new Book("890-ㅁ04", "jdbc", "제갈동"),
 					  new Book("890-ㅁ05", "html", "이에치")};
 		Scanner scanner = new Scanner(System.in);
-		int fn ;  // 기능번호(1:대출, 2:반납 ,3:책list출력, 0:종료)
-		int idx;  // 대출하거나 반납할 때 조회된 책의 index
+			int fn ;  // 기능번호(1:대출, 2:반납 ,3:책list출력, 0:종료)
+			int idx;  // 대출하거나 반납할 때 조회된 책의 index
 		String bTitle, borrower, checkOutDate; //사용자에게 입력받을 책이름, 대출인, 대출일
-		do {
-				System.out.print("1:대출 | 2:반납 | 3:책list | 0:종료");
-				fn = scanner.nextInt(); //white-space까지 입력된 정수를 받음
+			do {
+					System.out.print("1:대출 | 2:반납 | 3:책list | 0:종료");
+					fn = scanner.nextInt(); //white-space까지 입력된 정수를 받음
 			switch(fn) {
 			case 1: //대출1.책이름입력 2. 책조회  3.책상태확인 4.대출인  5.대출일 6.checkOut(대출인,대출일)메소드 호출
 				// 1. 책이름 입력
-				System.out.println("대출할 책 이름은?");
-				bTitle = scanner.next();  //white-space앞까지 입력된 스트링을 받음
+					System.out.println("대출할 책 이름은?");
+					bTitle = scanner.next();  //white-space앞까지 입력된 스트링을 받음
 				// 2. 책조회
 				for(idx=0; idx<books.length; idx++) {
 					if(books[idx].getBookTitle().equals(bTitle)) {
@@ -45,15 +45,31 @@ public class Main {
 				}
 			}
 				break;
-			case 2: 
-				System.out.println("반납 로직"); break;
-			case 3: 
+				
+				case 2: //반납: 1.책이름입력 2. 책조회 3. CheckIn() 메소드 호출
+					// 1. 책이름 입력
+					System.out.print("반납할 책 이름은 ?");
+					bTitle = scanner.next();
+					//2. 책조회
+					for(idx=0; idx<books.length; idx++) {
+						if(bTitle.equals(books[idx].getBookTitle())) {
+							break;
+						}
+					}
+					if(idx == books.length) {
+						System.out.println("해당 도서는 본 도서관 책이 아닙니다");
+					}else {
+						// 3. CheckIn() 메소드 호출
+						books[idx].checkIn();
+					}
+					break;
+				case 3: 
 				for(Book book : books) {
 					book.printState();
 				}
 			}
 		}while(fn!=0);{
 		System.out.println("BYE");
+		}
 	}
-}
 }
