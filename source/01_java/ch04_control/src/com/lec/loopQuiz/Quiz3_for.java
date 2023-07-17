@@ -2,7 +2,7 @@ package com.lec.loopQuiz;
 
 import java.util.Scanner;
 
-public class Ex03 {
+public class Quiz3_for {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 			System.out.print("몇단 출력할까? ");

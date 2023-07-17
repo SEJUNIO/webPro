@@ -1,4 +1,4 @@
-package com.lec.ex01_list;
+package com.lec.quiz;
 
 public class Customer {
 	private String name;

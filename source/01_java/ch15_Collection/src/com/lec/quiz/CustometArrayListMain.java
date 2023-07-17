@@ -1,4 +1,4 @@
-package com.lec.ex01_list;
+package com.lec.quiz;
 //N(n)입력할 때 까지 고객이름, 전화, 주소를 입력받아 arrayList에 add
 //N(n)을 입력하면 가입한 고객정보 출력(arrayList for문을 출력)
 import java.util.ArrayList;
@@ -22,6 +22,14 @@ public class CustometArrayListMain {
 			address = scanner.nextLine();
 			//Customers.add();
 			customers.add(new Customer(name, tel, address));
+//			Customer customer = new Customer(); //customer.name = null,  tel =null, address=null
+//			System.out.print("이름 ? ");
+//			customer.setName(scanner.nextLine());
+//			System.out.print("전화번호 ? ");
+//			customer.setTel(scanner.nextLine());
+//			System.out.print("주소 ? ");
+//			customer.setAddress(scanner.nextLine());
+//			customers.add(customer);
 			
 		}
 		//N(n)을 입력하면 가입한 고객정보 출력(arrayList for문을 출력)
