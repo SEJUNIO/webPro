@@ -1,0 +1,5 @@
+ArrayList<String<list = new ArrayList<>()
+list.add("고용");
+list.get()
+for(int i=0; i<list.length(배열) i<list.size(list); i++{ 
+String[] arr = new String[2];

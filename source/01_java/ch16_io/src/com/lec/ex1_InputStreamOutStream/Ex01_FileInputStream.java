@@ -1,4 +1,4 @@
-package ch16_Ex01_FileInputSteam;
+package com.lec.ex1_InputStreamOutStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
