@@ -17,8 +17,11 @@ public class Friend {
 	}
 	@Override
 	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-		return "이름:" + name +"\n주소:" + address + "\n핸드폰:"+tel + "\n생일:"+ sdf.format(birthday) + "\n";
+		if(birthday!=null) {
+			SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+			return "이름:"+name +"\n주소:" + address + "\n핸드폰:"+tel +"\n생일:"+sdf.format(birthday) +"\n";
+		}
+		return "이름:"+name +"\n주소:" + address + "\n핸드폰:"+tel;
 	}
 	//getter
 	public Date getBirthday() { //내 객체의 벌스데이를 가져온다.
