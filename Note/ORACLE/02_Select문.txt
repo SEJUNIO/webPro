@@ -1,0 +1,47 @@
+[Select문]
+
+[sql]
+SELECT 문장 작성법 (실행방법 : CTRL+ENTER) SQL문은 대소문자 구분X
+대소문자 구별하지 않습니다
+문장은 한줄 또는 여러줄에 입력될 수 있다.
+절은 보통 읽고 편집하기 쉽게 줄을 나누도록 합니다.
+탭과 들여쓰기는 코드를 보다 읽기 쉽게 하기 위해 사용
+일반적으로 대문자로 입력
+키워드를 제외한 다른 모든 단어 , 테이블 이름 ,열 이름은 소문자로 입력하기도 한다.
+주석처리 --
+
+SELECT - 기본 시작..
+WHERE 조건과 비교연산자 
+같다 (=), 크거나 같다(>=), 작거나 같다(<=) 다르다(<> ^= !=)
+
+논리연산자
+AND, OR,  NOT
+
+산술연산자 (SELECT절, 조건절, ORDER BY절)
+
+연결연산자(||) : 필드나 문자를 연결
+
+중복제거 (DISTINCT)
+
+DISTINCT 필드; 필드 중복제거
+BETWEEN a AND b : a부터 b (a,b값 포함. a가 작은 값) 
+IN(list)            : list의 값 중 어느 하나와 일치한다
+LIKE pattern       : 검색하고자 하는 값을 정확히 모를 경우 pattern과 일치하는지를 검색하며 pattern에는 다음의 두가지 와일드카드가 사용된다.
+% : 문자가 없거나, 하나 이상의 문자가 어떤 값이 와도 상관없다.
+_ : 하나의 문자가 어떤 값이 와도 상관없다
+
+IS NULL                : null값을 가졌다
+NOT BETWEEN a AND b : a와 b 사이에 있지 않다(a,b값 포함되지 않음)
+NOT IN (list)            : list의 값과 일치하지 않는다.
+NOT LIKE pattern       : 문자형태가 pattern과 일치하지 않는다.
+NOT IS NULL           : null값을 갖지 않다
+ASC 오름차순. Default
+DESC 내림차순
+SELECT *  FROM emp ORDER BY SAL; -- 오름차순 정렬(기본) ASC
+SELECT * FROM emp ORDER BY sal ASC; -- ASC 오름차순
+SELECT * FROM emp ORDER BY sal DESC; -- 내림차순 정렬
+SELECT ename, hiredate FROM emp ORDER BY hiredate DESC; -- 내림차순
+SELECT ename, hiredate FROM emp ORDER BY hiredate; -- 오름차순
+연봉이 작은 것부터 순서대로 출력(연봉이 같으면 입사일로 나중인 사람 순으로 정함)
+SELECT ename, sal*12+NVL(comm, 0) 연봉 FROM emp ORDER BY 연봉, hiredate DESC;
+

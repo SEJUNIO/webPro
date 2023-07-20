@@ -1,0 +1,53 @@
+자바 파일 입출력 (i/o)
+
+입출력이란 ?!
+I/O란? 입력(Input)과 출력(Output)을 뜻 합니다. 프로그램에게 입력하는 것은 Input이며, 
+프로그램에서 어떤 것을 출력하는 것을 Output이라고 합니다.
+
+Input : 파일 데이터를 읽는다. 키보드의 데이터를 읽는다. 네트워크상의 데이터를 읽는다(전송)
+Output :파일에 데이터를 쓴다. 모니터에 데이터를 쓴다(출력). 네트워크상에 데이터를 쓴다(전송)
+
+Java에서의 파일입출력 API
+InputStream : 1byte단위 입력 API. 이미지, 동영상 등의 데이터에 주로 사용
+OutputStream : 1byte단위 출력 API. 이미지, 동영상 등의 데이터에 주로 사용
+Reader : 2byte단위 입력 API. 문자열에 주로 사용
+Writer : 2byte단위 출력 API. 문자열에 주로 사용
+BufferedReader / BufferedWriter
+PrintWriter
+
+[스트림] 데이터를 운반 하는데 사용되는 연결통로. 
+연속적인 데이터의 흐름을 물에 비유해서 붙여진 이름 
+하나의 스트림으로 입출력을 동시에 수행 못함. 입출력을 동시에 수행하려면 2개의 스트림이 필요.
+파일로부터 데이터를 읽는 3단계 : 파일(연결통로)을 연다 -> 파일의 데이터를 읽는다(필요한 만큼 반복) -> 파일을 닫는다
+파일에 데이터를 쓰는 3단계 : 파일(연결통로)을 연다 -> 파일에 데이터를 쓴다 -> 파일을 닫는다
+
+InputStream 사용법
+1 - InputStream(추상) 클래스를 상속받은 여러 가지 API 하위 클래스 중의 하나를 이용해서 객체를 만든다. 
+또는 다른 클래스의 메소드에서 반환(리턴)되는 타입 객체를 얻는다
+2 - read(), read(byte[]) 두 개의 메소드를 이용하여 데이터를 읽는다.
+3 - 예외 처리와 무조건 close() 실행
+I/O를 하면서 반드시 해야 하는 예외처리가 있습니다. IOException입니다. 반드시 하도록 컴파일러가 강요합니다
+
+OutputStream 사용법
+1 - OutputStream(추상) 클래스를 상속받은 여러가지 API 하위 클래스들 중의 하나를 이용해서 객체를 만든다.
+또는 다른 클래스의 메소드에서 반환(리턴)되는 타입 객체를 얻는다.
+2 - write()메소드를 이용해서 데이터를 읽으면 됩니다
+3 - write(int), write(byte[]), write(byte[], int, int) 세개의 메소드를 이용할 수 있습니다
+4 - 예외 처리와 무조건 close() 실행
+I/O를 하면서 반드시 해야 하는 예외처리가 있습니다. IOException입니다. 반드시 하도록 컴파일러가 강요합니다
+
+파일 읽고 쓰기  
+파일을 읽고, 다른 파일에 쓰고 결국은 파일 복사
+작업순서 : InputStream, OutputStream 준비하고 > is로 읽어들인 데이터를 os으로 씀 > 외부연결 close()함.
+read() : read(), read(byte[]) 등 다양한 메소드 이용 가능
+write() : write(byte), write(byte[]), (write(byte[], int, int) 등 다양한 메소드 이용 가능
+
+BufferedReader, BufferedWriter 클래스
+속도를 빨리 하기 위한 보조 스트림
+
+Reader : 2byte 단위의 읽기
+Writer : 2byte 단위의 쓰기
+
+
+
+
