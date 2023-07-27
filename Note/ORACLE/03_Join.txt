@@ -22,4 +22,11 @@ ex ). SELECT * FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO;
 Non-Equi Join은 조인 조건에 특정 범위 내에 있는지를 조사하기 위해서 WHERE 절에 조인 조건을 = 연산자
 이외의 비교 연산자를 사용합니다. Non-Equi Join을 학습하기 전에 급여 등급 테이블(SALGRADE )을 확인하자.
 
+[SELF-JOIN]
+그대로 자기 자신과 조인을 맺는것 입니다.
+셀프조인은 EDUI JOIN 과 같으나 하나의 테이블에 조인이 일어나는 것이 다릅니다.
+같은 테이블에 대해 두개의 ALIAS를 작성 함으로서 FROM 절에 두개의 테이블을 사용하는것과 같이 합니다.
 
+[OUTER JOIN]
+조인 조건에 만족하지 않아서 SELF JOIN에 결과에 배재되는경우 해당 로우를 나타내기 위해 외부조인을 사용합니다, 
+그 조인이 OUTER JOIN 입니다. 출력값뒤에 (+)를 붙이거나 다른 내용에 (+)를 붙입니다.
