@@ -1,0 +1,22 @@
+[MYSQL]
+SQL에 기반을 둔 관계형  DBMS 중 하나
+처리속도가 상당히 빠르고 대용량의 데이터 처리 용이, 설치방법이 쉽고 초보자도 쉬움, 보안성 우수
+
+[DDL]
+MySQL 자료형
+Tinyint, smallint, int, integer, float(m,d), double,  char, varchar, BLOB, date, datetime, timestamp, time
+
+[제약조건] 
+Unique, primary key, not null, foreign key, check
+
+[DML (Query - Auto-Commit Transections체크되어 있으면 autocommit됨)]
+select문 (and 연산자는 && 또는 and)
+
+EX). select concat(pname, '(',job, ')') from personal; -- 오라클은 2개까지만. ||은 OR의 의미 연결연산자가 아니다.
+
+DCL ( 계정생성, 권한부여, 권한박탈, 계정삭제)
+
+create user scott identified by 'tiger'; -- 계정생성
+grant all on *.* to scott; -- 권한부여
+
+오라클과 거의 같으나 별도의 몇개가 다르다.
