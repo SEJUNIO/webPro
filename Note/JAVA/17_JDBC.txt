@@ -1,0 +1,15 @@
+[JDBC]
+데이터베이스(테이블은 컬럼(속성,필드)와 로우(엔티티)로 이루어져 있고 서로 연관된 데이터 들이 표처럼 구성).
+[JDBC(Java Database Connectivity)] 
+자바 패키지의 일부로 자바 프로그램이 데이터 베이스와 연결되어 데이터를 주고 받을 수 있게 해 주는 프로그래밍 인터페이스이다. 
+자바 데이터베이스 프로그래밍 API라고 할 수 있다.
+
+[JDBC프로그래밍 단계와 사용 클래스]
+1 - JDBC 드라이버 로드 : Class.forName()을 이용. 드라이버 클래스 로딩
+2 - 데이터베이스 연결(DB에 연결) DriverManager.getConnection()을 이용해 Connection 객체 생성
+3 - Statement 생성 (Sql문을 수행할 객체 생성) : SQL을 이용해 DB를 조회하거나 다룸
+4 - SQL문 전송 (SQL문 수행전송하고 결과 받는다) : SQL문 Statement객체의 executeQuery(), executeUpdate() 메소드를 이용, 데이터베이스로 전달해 처리
+5 - 결과 받기 : SQL 실행 결과를 반환 받아야 하는 값이 있따면 ResultSet객체로 받음
+사용 API : java.sql.ResultSet
+6 - 결과 받아 원하는 로직 수행 (수행한 결과를 읽어 원하는 로직을 수행한다 (필요할 때까지 반복)
+7 - 연결 해제 ( DB 연결을 끊는다) : 사용한 자원을 반납함
