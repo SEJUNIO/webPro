@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 // 사용자에게 부서번호를 받아 중복체크 후, 부서명, 근무지를 입력받고 dept 테이블에 insert
-public class InsertDept2 {
+public class insertDept2 {
 	public static void main(String[] args) {
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url    = "jdbc:oracle:thin:@localhost:1521:xe";

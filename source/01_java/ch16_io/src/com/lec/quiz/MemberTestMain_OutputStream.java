@@ -13,7 +13,7 @@ public class MemberTestMain_OutputStream {
 		ArrayList<Member> members = new ArrayList<Member>();
 		Scanner scanner = new Scanner(System.in);
 		String name, tel, birthStr, address; // 사용자에게 받을 정보들
-		Date birthday;
+		Date birthday; 
 		while(true){
 			System.out.print("회원가입하실래요 (단, 원치 않으면 N) ?");
 			if(scanner.next().equalsIgnoreCase("n")) break;
