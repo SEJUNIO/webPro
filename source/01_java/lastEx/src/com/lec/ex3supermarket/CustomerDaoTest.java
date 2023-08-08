@@ -47,7 +47,7 @@ public class CustomerDaoTest {
 			}
 		}
 		System.out.println("5. 전체 출력");
-		customers = dao.GetCustomers();
+		customers = dao.getCustomers();
 		if(customers.size()==0) {
 			System.out.println("해당 레벨은 없습니다.");
 		}else {

@@ -3,7 +3,7 @@
 -- public int insertCustomer(String ctel, String cname)
 -- public int insertCustoner(
 INSERT INTO CUSTOMER (CID, CTEL, CNAME)
-    VALUES (CUSTOMER_CID_SEQ.NEXTVAL, '010-6666-6666', '유길동');
+    VALUES (CUSTOMER_CID_SEQ.NEXTVAL, '010-4444-5555', '유길동');
 ROLLBACK;
 -- 2. 폰뒤4자리(FULL) 검색 searchTEL를 받아 CID, CNAME, CPOINT, CAMOUNT, LEVELNAME, forLevelUp)
  -- public ArrayList<
@@ -40,15 +40,43 @@ SELECT CNAME, CAMOUNT, C.LEVELNO 현재레벨, L.LEVELNO 바뀔레벨, LOW, HIGH
         SELECT * FROM CUSTOMER WHERE CID=1;
         
         -- DAO에 들어갈 QUERY (1단계+2단계)
+UPDATE CUSTOMER SET CPOINT = CPOINT + (1000000*0.05),
+    CAMOUNT = CAMOUNT + 1000000, 
+    LEVELNO = (SELECT L.LEVELNO
+        FROM CUSTOMER C, CUS_LEVEL L
+        WHERE CAMOUNT+1000000 BETWEEN LOW AND HIGH AND CID=1)
+        WHERE CID=1;
+        commit;
+    SELECT * FROM CUSTOMER WHERE CID=1;
+ -- 3번 물품구매 후 고객정보를 출력(CID, CNAME, CPOINT, CAMOUNT, LEVELNAME, froLevelUp)
+    --public CustomerDto getCustomer(int cid)
+SELECT CID, CTEL, CNAME, CPOINT, CAMOUNT, LEVELNAME,
+    (SELECT HIGH+1-CAMOUNT FROM CUSTOMER WHERE LEVELNO!=5 AND CID=C.CID) forLevelUp
+    FROM CUSTOMER C, CUS_LEVEL L
+    WHERE C.LEVELNO = L.LEVELNO AND CID=1;
+    
+-- 4번 고객등급별(등급이름) 출력
+SELECT CID, CTEL, CNAME, CPOINT, CAMOUNT, LEVELNAME,
+    (SELECT HIGH+1-CAMOUNT FROM CUSTOMER WHERE LEVELNO!=5 AND CID=C.CID) forLevelUp
+    FROM CUSTOMER C, CUS_LEVEL L
+    WHERE C.LEVELNO = L.LEVELNO AND LEVELNAME = 'NORMAL'
+    ORDER BY CAMOUNT DESC, CID;
 
--- 물품구매시 UPDATE 필요(구매누적금액, 포인트 UPDATE와 LEVELNO UPDATE)
--- public int buy(int cAmount, int cId)
--- 4. 등급별출력 ? CID, CTEL, CNAME, CPOINT, CAMOUNT, LEVELNAME, 레벨업을위한쓸돈
+-- 5번 고객전체 출력
+SELECT CID, CTEL, CNAME, CPOINT, CAMOUNT, LEVELNAME,
+    (SELECT HIGH+1-CAMOUNT FROM CUSTOMER WHERE LEVELNO!=5 AND CID=C.CID) forLevelUp
+    FROM CUSTOMER C, CUS_LEVEL L
+    WHERE C.LEVELNO = L.LEVELNO 
+    ORDER BY CAMOUNT DESC, CID;
+-- 6번 회원탈퇴 CTEL받아 DELETE
+DELETE FROM CUSTOMER WHERE CTEL='010-6666-6666';
+COMMIT;
 
 
--- public ArrayList<CustomerDto> levelNameGetCustomers(String levelName)
--- 5. 전체출력 ? CID, CTEL, CNAME, CPOINT, CAMOUNT, LEVELNAME, 레벨업을위한쓸돈
 
 
--- public ArrayList<CustomerDto> getCustomers()
--- 6. 회원탈퇴 : public int deleteCustomer(String cTel)
+
+    
+    
+    
+    

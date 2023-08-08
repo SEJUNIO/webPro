@@ -201,7 +201,7 @@ public class CustomerDao {
 			String sql = "SELECT CID, CTEL, CNAME, CPOINT, CAMOUNT, LEVELNAME,"
 					+ "    (SELECT HIGH+1-CAMOUNT FROM CUSTOMER WHERE LEVELNO!=5 AND CID=C.CID) forLevelUp"
 					+ "    FROM CUSTOMER C, CUS_LEVEL L"
-					+ "    WHERE C.LEVELNO = L.LEVELNO AND LEVELNAME =UPPER()?"
+					+ "    WHERE C.LEVELNO = L.LEVELNO AND LEVELNAME =UPPER(?)"
 					+ "    ORDER BY CAMOUNT DESC, CID";
 			try {
 				conn = DriverManager.getConnection(url, "scott", "tiger");
@@ -232,7 +232,7 @@ public class CustomerDao {
 			return dtos;
 	}
 		//5. 고객 전체 출력
-		public ArrayList<CustomerDto> GetCustomers(){
+		public ArrayList<CustomerDto> getCustomers(){
 		ArrayList<CustomerDto> dtos = new ArrayList<CustomerDto>();
 		Connection conn 		= null;
 		PreparedStatement pstmt = null;
