@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+<script>
+    function chk() {
+        if (frm.name.value.trim().length < 2) {
+            alert('이름은 2글자 이상 필수입니다.');
+            frm.name.focus();
+            return false;
+        } else if (frm.id.value.trim().length <= 3) {
+            alert('아이디는 3글자 이상 입니다');
+            frm.id.focus();
+            return false;
+        } else if (!frm.pw.value) {
+            alert('비밀번호를 입력하세요');
+            frm.pw.focus();
+            return false;
+        } else if (frm.pw.value != frm.pwChk.value) {
+            alert('비밀번호가  틀렸습니다');
+            frm.pw.focus();
+            return false;
+        } else if (!frm.tel.value) {
+            alert('전화번호가 틀렸습니다');
+            frm.tel.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<link href="11_quiz.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="" name="frm" onsubmit="return chk()">
+        <h2>회원가입</h2>
+        <form>
+            <fieldset>
+                <legend>필수입력</legend>
+
+                <label for="name">이 &nbsp; &nbsp; 름 <strong>*</strong></label>
+                <input type="text" name="name" id="name" required="required" placeholder="이름은 2글자 이상" />
+                <br />
+
+                <label for="id"> 아이디 &nbsp; <strong>*</strong></label>
+                <input type="text" name="id" id="id" required="required" placeholder="ID는 4글자 이상" />
+                <br />
+
+                <label for="password">비밀번호<strong>*</strong></label>
+                <input type="password" name="pw" id="pw" required="required" />
+                <br />
+
+                <label for="passwordChk">비번확인<strong>*</strong></label>
+                <input type="password" name="pwChk" id="pwChk" required="required" />
+                <br />
+
+                <label for="tel">전 &nbsp; &nbsp; 화 <strong>*</strong></label>
+                <input type="text" name="tel" id="tel" required="required" placeholder="00-000-0000/000-0000-0000" pattern="\d{2,3}-\d{3,4}-\d{4}" />
+                <br />
+
+                <label for="email">이메일&nbsp; &nbsp;<strong>*</strong></label>
+                <input type="text" name="email" id="email" required="required" placeholder="abc@domain.com또는co.kr" pattern="\w+@[0-9a-zA-Z]+(.\W+){1,2}" />
+                <br />
+            </fieldset>
+
+            <fieldset>
+                <legend>추가 입력 사항</legend>
+
+                <label for="life">결혼유무</label>
+                <input type="radio" name="life" id="life" value="미혼" checked="checked" />미혼
+                <input type="radio" name="life" id="life" value="기혼" />기혼
+                <br />
+
+                <label for="child">자 &nbsp; &nbsp;&nbsp; 식</label>
+                <input type="checkbox" name="child" value="아들" id="아들" />
+                <label for="child">아들</label>
+                <input type="checkbox" name="child" value="딸" id="딸" />
+                <label for="child">딸</label>
+                <br />
+
+                <label for="area">지 &nbsp; &nbsp;&nbsp; 역</label>
+                <select name="area">
+                    <option value="경기">경기</option>
+                    <option>서울</option>
+                    <option>대전</option>
+                    <option>부산</option>
+                </select>
+                <br />
+
+            </fieldset>
+            <p>
+                <input type="submit" value="가입" />
+                <input type="reset" value="취소" />
+            </p>
+
+
+
+
+        </form>
+
+</body>
+</html>
