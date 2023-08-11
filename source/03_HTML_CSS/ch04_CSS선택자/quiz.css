@@ -1,0 +1,81 @@
+﻿#header, #content, #footer {
+    width : 1000px;
+    margin : 0 auto;
+    overflow : hidden;
+}
+.left, .right {
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+.center {
+    float: left;
+    width: 693px;
+    height: 150px;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+#content > div {
+    height : 300px;
+}
+#header .left {
+    width:150px;
+    height:150px;
+    border-radius :  40px 0px 40px 0;
+}
+#header .center{
+    width : 693px;
+    height : 150px;
+    border-radius : 0px 0px 40px 40px; 
+}
+#header .right{
+    border-radius : 0 40px 0 40px;
+}
+#content .left{
+    border-radius: 0 40px 40px 0;
+}
+#content .center{
+    border-radius : 40px 40px 40px 40px;
+}
+#content .right{
+    border-radius : 40px 0px 0px 40px;
+}
+#footer .left{
+    border-radius : 0 40px 0 40px;
+}
+#footer .center {
+    border-radius: 40px 40px 0 0;
+}
+#footer .right {
+    border-radius: 40px 0  40px 0;
+}
+#content .center #nav > li {
+    font-size : 30px;
+}
+.center  li {
+    list-style : none;
+}
+li > a { 
+    text-decoration : none;
+    color: black;
+    font-weight : bold;
+    font-size : 36px;
+    float : left;
+    padding :20px;
+    margin-left : 30px;
+}
+#academy { 
+    float : left;
+    text-align : center;
+}
+#content .right li:nth-child(10) {
+    color : red;
+}
+#content .right li:nth-child(11) {
+    color: red;
+}
+#content .right li:last-child {
+    color: red;
+}
