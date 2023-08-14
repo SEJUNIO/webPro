@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /* 화면 가운데 배치 */
+        #wrap {
+            width : 750px;
+            margin: 0 auto;
+        }
+        #header {
+            border-bottom : 1px solid gray;
+        }
+        #content {
+           text-align : justify;
+           padding : 0 10px;
+        }
+        #content p:nth-child(2)::first-line,
+        #content p:nth-child(3)::first-line{
+            color : blue;
+            font-size : 20px;
+            font-weight : bold;
+        }
+        #content p:nth-child(2)::first-letter{
+            font-size : 2em;
+        }
+        #content p:nth-child(3) span{
+            font-size:2em;
+        }
+        #content ul {
+            margin : 30px 0;
+        }
+        #content ul li a::after {  /*컨텐츠 ul li 뒤에 가상클래스 추가하여 도메인 삽입*/ /*링크선택자*/
+            content : ' - ' attr(href);
+        }
+        #content ul li a{
+            color : blue;
+            text-decoration : none;
+        }
+        #content ul li:not(.web) a{ /*부정 선택자*/
+            background-color : lightgoldenrodyellow;
+        }
+        #footer ul {
+            border-top : 1px solid gray;
+            overflow : hidden; /*수평으로 할 태그 부모단*/
+        }
+        #footer ul li{
+            float : left; /*블록형태그를 수평으로*/
+            list-style : none;
+            padding : 15px 5px;
+        }
+        #footer ul li:first-child{
+            padding-top : 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>제목이나 회사명</h1>
+        </div>
+        <div id="content">
+            <p>
+                What is Lorem Ipsum?
+            </p>
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            </p>
+            <p>
+                <span>L</span>orem Ipsum is simply dummy text of the printing and typesetting industry
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+            </p>
+            <ul>
+                <li><a href="http://www.naver.com" target="_blank">네이버</a></li>
+                <li class="web"><a href="http://www.daum.net" target="_blank">다음</a></li>
+                <li><a href="http://www.yahoo.com" target="_blank">야후</a></li>
+                <li><a href="http://www.google.com" target="_blank">구글</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><img src="ch04/logo.png" /></li>
+                <li><img src="ch04/address.png" /></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

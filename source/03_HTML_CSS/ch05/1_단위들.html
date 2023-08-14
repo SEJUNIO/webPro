@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+        width : 600px;
+        margin : 0 auto;
+        border : 1px solid gray;
+        padding : 10px;
+        text-align : justify;
+        }
+        #wrap p:nth-child(2n) {
+            background-color : lightcyan;
+        }
+        #wrap p:nth-child(1){
+            font-size : 0.6em;
+        }
+        #wrap p:nth-child(2){
+            font-size : 100%; /*문자의 경우 월래 사이즈의 몇%.*/
+            /*width, height, padding, margin 등의 경우 : 부모의 몇% */
+        }
+        #wrap p:nth-child(3) {
+            font-size : 24px; /*모든 속성에 사용 가능*/
+        }
+        #wrap p:nth-child(4){
+            font-size : 2em;
+        }
+        #wrap p:nth-child(4) {
+            font-size : 250%;
+         }
+        #wrap p > span {
+            display: block;  /*display속성을 block으로 수정하면 block형 태그로 전환*/
+            color  : gray;
+            font-size : 1.6em;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p>
+            대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다.
+        </p>
+        <p>
+            대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다.
+        </p>
+        <p>
+            대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다.
+        </p>
+        <p>
+            대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다.
+        </p>
+    </div>
+</body>
+</html>
