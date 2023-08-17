@@ -1,0 +1,206 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+}
+a{
+    text-decoration : none;
+}
+li{
+    list-style : none;
+}
+/* * * * * header_nav * * * * */
+#header_nav .gnb {
+    min-width: 915px;
+    background-color: #2d1152;
+    overflow: hidden;
+    font-size: 13px;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+}
+
+.gnb ul li {
+    list-style: none;
+    height: 25px;
+    float: left;
+    width: 60px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+    .gnb ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+.survivalFootball ul img {
+    float: left;
+}
+
+.survivalFootball ul li {
+    float: right;
+    color: white;
+}
+
+    .survivalFootball ul li:nth-child(2) {
+        width: 25px;
+    }
+
+    .survivalFootball ul li:nth-child(1) {
+        width: 200px;
+    }
+/* * * * * header-info* * * * */
+#header_info {
+    width: 1000px;
+    height: 80px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+    #header_info .logo {
+        margin-top: 10px;
+        float: left;
+    }
+
+    #header_info .search {
+        float: left;
+    }
+
+        #header_info .search input[type='text'] {
+            width: 400px;
+            height: 30px;
+            margin-left: 20px;
+            margin-top: 20px;
+            border: 1px solid #3488d9;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+    #header_info .btn_search {
+        width: 124px;
+        height: 37px;
+        line-height: 37px;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 5px;
+        background-image: url(../img/search_btn.png);
+        color: #FFFFFF;
+        border: 0;
+        outline: 0;
+    }
+
+    #header_info .service ul li {
+        list-style: none;
+        float: left;
+        font-size: 15px;
+        text-align: center;
+        width: 80px;
+        line-height: 90px;
+        margin: 0;
+        font-weight: bold;
+    }
+
+        #header_info .service ul li a {
+            color: darkblue;
+            text-decoration: none;
+        }
+/* * * * * content * * * * */
+#content {
+    width: 1000px;
+    margin: 10px auto 0;
+    overflow: hidden;
+}
+#main {
+    width: 1000px;
+    margin: 0 auto;
+    
+}
+#content #main-menu {
+    float: left;
+    width: 155px;
+    height: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#content #main-menu ul li {
+    line-height: 30px;
+    padding: 4px 30px;
+    font-size: 1.1em;
+}
+
+#content #main-menu ul li a {
+     text-decoration: none;
+     color: black;
+}
+#content #main {
+    width: 600px;
+    float: left;
+}
+    #content #main div,
+    #content #main_banner div {
+        border: 1px solid gray;
+        margin: 3px;
+    }
+    #content #main div:nth-child(1) {
+        height: 300px;
+    }
+    #content #main div:nth-child(2) {
+        height: 150px;
+    }
+
+    #content #main div:nth-child(3) {
+        height: 50px;
+        line-height: 50px;
+        background-color: #500095;
+    }
+    #content #main div:nth-child(3) ul{
+        overflow :hidden;
+    }
+        #content #main div:nth-child(3) ul li{
+            float : left;
+            width : 16.6%;
+            text-align : center;
+        }
+        #content #main div:nth-child(3) ul li a{
+            color:#ffffff;
+        }
+        #content #main div:nth-child(4),
+        #content #main div:nth-child(5),
+        #content #main div:nth-child(6),
+        #content #main div:nth-child(7) {
+            height: 100px;
+        }
+        #content #main_banner {
+            width: 230px;
+            float: left;
+}
+         #content #main_banner div:nth-child(1),
+         #content #main_banner div:nth-child(2) {
+                height: 100px;
+            }
+          #content #main_banner div:nth-child(3),
+          #content #main_banner div:nth-child(4) {
+              height : 150px;
+          }
+          #content #main_banner div:last-child{
+              height : 200px;
+          }
+          footer{
+              width:1000px;
+              margin : 2px auto 0;
+              border : 1px solid gray;
+          }
+          footer ul {
+              overflow : hidden;
+          }
+          footer ul li {
+              float : left;
+          }
+            footer ul li:first-child {
+                margin: 20px 50px 20px 150px;
+            }
+            footer ul li:last-child {
+                margin: 15px 0;
+            }

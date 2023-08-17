@@ -3,36 +3,114 @@
     padding: 0;
     font-family: 'Merriweather-Light';
 }
-#nav{
-    border : 1px solid red;
-    width:1200px;
-    height:27px;
-    margin : 10px 0 0 10px;
+    li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+}#wrap{
+     width : 1000px;
+ }
+ .inner { 
+     overflow : hidden;
+     margin: 20px auto;
+     text-align : center;
+ }
+.inner > #nav_left {
+    overflow: hidden;
+    text-align: center;
+}
+inner > #nav_right {
+    overflow: hidden;
+    text-align : center;
+}
+#nav_left ul  > li{
+    float : left;
     font-size : 20px;
+    margin : 10px;
+border:1px solid red;
 }
-    #nav .logo {
-        border: 1px solid red;
-        height: 27px;
-        background-color: #FDEADA;
-        margin : 0 auto;
+#nav_right ul > li{
+    float : right;
+   font-size : 20px;
+   margin : 10px;
+border:1px solid red;
+}
+#nav_left ul  .logo{
+    display : block;
+    width : 100px;
+    height: 40px;
+    border : 1px solid gray;
+    background-color:#fdeada;
+    font-size : 1.6em;
+    text-align : center;
+}
+#content{
+    overflow : hidden;
+}
+#content #title{
+    border-bottom : 1px solid gray;
+    padding : 10px;
+    font-size: 1.2em;
+}
+#content #lnb{
+    float : left;
+    width : 180px;
+    height: 200px;
+    margin-left : 15px;
+}
+#content #lnb ul li{
+    line-height : 30px;
+    padding : 2px 30px;
+    border : 1px solid gray;
+    font-size: 1.1em;
+}
+    #content #lnb ul li:nth-child(4) {
+        font-weight: bold;
+        background-color: #fdeada;
     }
-        #nav .logo > .nav_left ul {
-            border: 1px solid red;
-            width: 54px;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-    #nav .nav_left ul li {
+    #content #my_content {
+        width: 750px;
+        border: 1px solid gray;
         float: left;
-        list-style: none;
-        width: 80px;
-        border: 1px solid red;
-        margin: 0 20px;
+        margin-left: 30px;
+        margin-bottom: 30px;
+        
     }
-#nav .nav_left ul  a{
-    text-decoration : none;
-    color:black;
-    float: left;
-    margin: 0 auto;
-    text-align:center;
-}
+        #content #my_content #sub_title {
+            border-bottom: 1px solid gray;
+            height: 30px;
+            line-height: 30px;
+            font-size: 0.9em;
+            padding-left: 5px;
+        }
+        #content #my_content #modify table {
+            width: 70%;
+            margin: 30px auto;
+        }
+        #content #my_content #modify table td{
+            padding : 3px;
+        }
+            #content #my_content #modify table input[type='text'],
+            #content #my_content #modify table input[type='email'] {
+                width: 90%;
+                height:25px;
+                border : 1px solid gray;
+            }
+            #content #my_content #modify table input[type='submit'] {
+                padding : 2px 10px;
+            }
+            #content #my_content #modify table tr:last-child td{
+                text-align : center;
+            }
+            footer {
+                clear: both;
+                background-color: #fdeada;
+                height:30px;
+                line-height : 30px;
+                border:1px solid gray;
+                text-align : center;
+            }
