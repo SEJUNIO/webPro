@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0, maxnum-scale=2.0, minnum-scale=0.7, user-scalable=yes "/>
+    <title></title>
+    <style>
+        *{
+            margin : 0;
+             padding : 0;
+             font-family : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        li{
+            list-style:none;
+        }
+        a{text-decoration: none;
+
+        }
+        header{
+            height : 100px;
+            background-color : #ea8f00;
+        }
+        header #logo_wrap{
+            height:50px;
+            line-height : 50px;
+            text-align : center;
+            position : relative;
+        }
+            header #logo_wrap  img.menu{
+                position : absolute;
+                left:0;
+                top:0;
+            }
+            header #logo_wrap img.myinfo {
+                position: absolute;
+                right: 10px;
+                top: 0;
+            }
+            header #logo_wrap a{
+             color: white;
+             font-weight : bold;
+            font-size : 1.3em;
+            }
+            header #search {
+                height : 50px;
+                position : relative; /*submit버튼(돋보기 이미지)를 search안에*/
+            }
+            header #search input[type='text'] {
+                width:100%;
+                height : 50px;
+                border : 3px solid #ea8f00;
+                box-sizing : border-box;
+                outline : 3px solid #ea8f00;
+                padding : 5px 55px ;
+                font-size : 1.3em;
+            }
+            header #search input[type=submit] {
+                height :50px;
+                width:50px;
+                background:url('img/search.png') no-repeat;
+                border : 0;
+                outline : none;
+                position : absolute;
+                top:0;
+                right : 0;
+            }
+            #lnb ul { 
+                overflow : hidden;
+                margin: 5px 0; /*위 아래 밖여백만 5px*/
+            }
+            #lnb ul li{
+                float : left;
+                width : 16.666%;
+                text-align : center;
+                height: 40px;
+                line-height : 40px;
+                border-right : 2px solid #ea8f00;
+                box-sizing : border-box ;
+            }
+            #lnb ul li:last-child{
+                border : none;
+            }
+            section #section1{
+                margin :5px 0;
+                overflow : hidden;
+            }
+            section #section1 .row1 > div,
+            section #section1 .row2 > div,
+            section #section1 .row3 > div{
+                float: left;
+                width : 50%;
+                height : 120px;
+                border : 2px solid white;
+                box-sizing:border-box;
+            }
+            section #section1 img{
+                width:100%;
+                height:100%;
+            }
+            #section #section2{
+                margin : 5px 0;
+            }
+            section #section2 ul li {
+                border : 1px solid gray;
+                padding : 5px;
+                /*말줄임 태그(ellipsis태그)-- 3개 묶어서 말줄임태그*/ 
+                
+            }
+                section #section2 ul li a {
+                    display : block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                section #section3{
+                    margin : 5px 0;
+                }
+                section #section3 ul li{
+                    border : 1px solid gray;
+                    margin : 5px;
+                    padding : 10px;
+                    height : 100px;
+                    position : relative;
+                }
+                section #section3 ul li p.img{
+                    position : absolute;
+                    left : 10px;
+                    top : 10px;
+                    width: 100px;
+                    height:100px;
+                }
+                section #section3 ul li p.txt{
+                    padding-left : 120px;
+                }
+                    section #section3 ul li p.txt span:first-child {
+                        display: block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-size : 1.3em;
+                        font-weight : bold;
+                        color : navy;
+                    }
+                    footer {
+                        background-color: #ea8f00;
+                        text-align : center;
+                    }
+                    footer p:last-child{
+                        font-size :.8em;
+                        margin-bottom:5px;
+                        padding-bottom:5px;
+                         color:#333333;
+                    }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo_wrap">
+            <img src="img/menu.png" alt="메뉴 아이콘" class="menu" />
+            <a href="ex.html" class="logo">mobile logo</a>
+            <img src="img/myinfo.png" alt="내정보" class="myinfo" />
+        </div>
+        <div id="search">
+            <form>
+                <input type="text" name="query_word" />
+                <input type="submit" value=""/>
+            </form>
+        </div>
+    </header>
+    <div id="lnb">
+        <ul>
+            <li><a href="#l1">lnb1</a></li>
+            <li><a href="#l2">lnb2</a></li>
+            <li><a href="#l3">lnb3</a></li>
+            <li><a href="#l4">lnb4</a></li>
+            <li><a href="#l5">lnb5</a></li>
+            <li><a href="#l6">lnb6</a></li>
+        </ul>
+    </div>
+    <section>
+        <div id="section1">
+            <div class="row1">
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/011/0004227744?sid=105">
+                        <img src="https://imgnews.pstatic.net/image/011/2023/08/18/0004227744_001_20230818095401007.jpg?type=w647" alt="1행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/092/0002302297?sid=105">
+                        <img src="https://imgnews.pstatic.net/image/092/2023/08/18/0002302297_001_20230818085205743.jpg?type=w647" alt="1행2열" />
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="row2">
+                <div>
+                    <a href="https://n.news.naver.com/mnews/hotissue/article/092/0002302329?type=series&cid=1087941">
+                        <img src="https://imgnews.pstatic.net/image/092/2023/08/18/0002302329_001_20230818112401211.jpg?type=w647" alt="2행2열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/037/0000032938?sid=105">
+                        <img src="https://imgnews.pstatic.net/image/037/2023/08/18/0000032938_001_20230818100201092.jpg?type=w647" alt="2행2열" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="row3">
+                <div>
+                    <a href="https://n.news.naver.com/mnews/hotissue/article/030/0003126233?type=series&cid=2001287">
+                        <img src="https://imgnews.pstatic.net/image/030/2023/08/16/0003126233_001_20230817093903392.jpg?type=w647" alt="3행1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/003/0012037759?sid=105">
+                        <img src="https://imgnews.pstatic.net/image/003/2023/08/18/NISI20230818_0001343298_web_20230818091238_20230818093008157.jpg?type=w647" alt="3행2열" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="section2">
+            <ul>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/092/0002302297?sid=105">
+                        다음 달 출시 예정인 아이폰15 시리즈가 최대 35W 충전을 지원할 예정이라고 IT매체 나인투파이브맥이 17일(현지시간) 소식통을 인용해 보도했다.
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/092/0002302297?sid=105">
+                        새 아이폰15 시리즈 중 일부는 최대 35W 빠른 충전이 가능할 예정이다.
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/092/0002302297?sid=105">
+                        애플은 작년에 듀얼 USB-C 포트를 갖춘 35W 충전기를 출시한 바 있다. 이번 소문이 사실이라면, 아이폰15 시리즈는 특정 충전기 없이 35W 고속 충전이 가능할 것으로 보인다.
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/092/0002302297?sid=105">
+                        비교하자면, 삼성 갤럭시S23 울트라의 경우 최대 45W 충전이 가능해 사용자가 1시간 안에 배터리를 0%에서 100%로 충전할 수 있다.
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="section3">
+            <ul>
+                <li>
+                    <p class="img">
+                        <img src="https://via.placeholder.com/100x100" alt="더미이미지100*100" />
+                    </p>
+                    <p class="txt">
+                        <span>첫번째 span은 말줄임태그를 사용할 예정입니다.</span>
+                        <span>두번째 span은 말줄임태그도 사용 안하고, line형 태그로 그대로 사용</span>
+                    </p>
+                </li>
+
+                <li>
+                    <p class="img">
+                        <img src="https://via.placeholder.com/100x100" alt="더미이미지100*100" />
+                    </p>
+                    <p class="txt">
+                        <span>첫번째 span은 말줄임태그를 사용할 예정입니다.</span>
+                        <span>두번째 span은 말줄임태그도 사용 안하고, line형 태그로 그대로 사용</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p><img src="./img/logo.png" alt="로고" /></p>
+        <p>서울시 서대문구 대현동 은하빌딩 2F</p>
+    </footer>
+</body>
+</html>
