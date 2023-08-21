@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        let kor, eng; //전체변수선언시 지역변수 따로 설정 x  let으로 선언시 const나 var 이용
+        do{            
+            var korStr = prompt('국어점수(0~100)?');
+            kor = Number(korStr);
+        }while(!korStr || isNaN(kor) || kor < 0 || kor> 100);
+        do{
+            var engStr = prompt('영어점수(0~100)?');            
+            eng = Number(engStr);            
+        }while(!engStr || isNaN(eng) || eng < 0 || eng > 100);
+        document.write('입력한 국어점수는 :' + korStr + '<br>');
+        document.write('입력한 영어점수는 :' + engStr + '<br>');
+        document.write('입력한 점수의 평균은 :' + (kor+eng)/2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
