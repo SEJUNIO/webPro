@@ -25,7 +25,7 @@
             let su2 = Number(frm.su2.value);
             let difference = (su1>su2)? (su1-su2) : (su2-su1);
             let bodyMsg, alertMsg;
-            if(su1>su2){
+            if(su1>su2){BigUint64Array
                 bodyMsg = '<h3>첫번째 수가' + difference + '만큼 더 크다</h3>';
             }else if(su2>su1) {
                 bodyMsg = '<h3>두번째 수가' + difference + '만큼 더 크다</h3>';
@@ -33,8 +33,9 @@
                 bodyMsg = '<h3>두 수는 같다</h3>';
             }
             document.body.innerHTML += bodyMsg;
-            alertMsg = bodyMsg.substring(4); //4번째인덱스부터 끝까지 추출   
-            alertMsg = alertMsg.substring(0, alertMsg.indexOf('</h3>'));
+            // alertMsg = bodyMsg.substring(4); //4번째인덱스부터 끝까지 추출   
+            // alertMsg = alertMsg.substring(0, alertMsg.indexOf('</h3>'));
+            alertMsg = bodyMsg.substring(4, )
             alert(alertMsg);
             frm.su1.value = su1;
             frm.su2.value = su2;

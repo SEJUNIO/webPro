@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-image: url('img/img01.png');
+            background-size : 100%;
+            color: lightgoldenrodyellow;
+        }
+    </style>
+    <script>
+        //타이머 시작
+        let img = ['url(img/img01.png)', 'url(img/img02.png)','url(img/img03.png)'];
+        let col = ['#ffff00', '#ff00ff', '#000000'];
+        let s = 0;
+        var id = setInterval(() =>{
+            document.body.innerHTML = '<h1>' + new Date()+ '</h1>' + '<br>';
+            // document.body.style.backgroundImage = img[s%img.length];          
+            // document.body.style.color =  col[s%col.length];
+            document.body.style.backgroundImage = img[s%3];   
+            document.body.style.color = col[s%3];  
+            s++;
+            
+        }, 1000);
+        
+        //타이머중지
+        setTimeout(function(){
+        clearInterval(id);
+            }, 10000); //1000
+    </script>
+</head>
+<body>
+    1초 후부터 10초동안 시간 출력
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // let i = Number(prompt("i의 j승을 구하려는데 i값은?"));
+        // let j = Number(prompt("i의 j승을 구하려는데 j값은?"));
+        // document.write("입력한 i의 j승은 " + pow(i, j) + "<br>");
+        document.write('pow(2,3) = ' + pow(2,3) + '<br>');
+        document.write('pow(2,2,2) = ' + pow(2,3,10,10) + '<br>');
+        document.write('pow(2) = ' + pow(2) + '<br>');
+        function pow(x,y){
+            let result = 1;
+            for(let cnt=1; cnt<=y; cnt++){
+                result *=x; //result = result*x;
+            }
+            return result;
+        }    
+    </script>
+</head>
+<body>
+
+</body>
+</html>
