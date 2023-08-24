@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //객체를 만드는 함수
+        function makeStudent(name, kor, mat, eng, sci){
+            let resultObj = {
+                name : name,
+                kor :  kor,
+                mat :  mat,
+                eng :  eng,
+                sci :  sci,
+                getSum :   function(){
+                    return this.kor + this.mat + this.eng + this.sci;
+                }, //getSum
+                getAvg :   function(){
+                    return this.getSum() / 4;
+                }, //getAvg
+                toString : function(){
+                    let output = '';
+                    for(let key in this){
+                        if(key != 'getSum' && key != 'getAvg' && key != 'toString'){
+                            output += key + ":" + this[key] + ' &nbsp; ';
+                        }else if(key == 'getSum' || key == 'getAvg'){
+                            output += key.substring(3).toUpperCase() + ':' + this[key]() + '&nbsp;';
+                        }//if
+                    }//for
+                    return output;
+                }, //tostring
+        }; //makeStudent
+        return resultObj;
+    }
+
+    var students = [];
+    students.push(makeStudent('홍디붕', 91, 90, 90, 90));
+    students.push(makeStudent('김디붕', 95, 90, 99, 90));
+    students.push(makeStudent('박디붕', 80, 90, 91, 85));
+    students.push(makeStudent('윤디붕', 85, 90, 70, 90));
+    students.push(makeStudent('이디붕', 75, 99, 80, 90));
+    students.forEach(function(data, idx){
+        document.write(idx+'번째 ' + data + '<hr>');
+    });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
