@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    table {width:350px; margin:20px auto; padding:20px 10px;}
+    table, input[type='text'], input[type='password'] {
+       border: 1px solid #385d81;
+       padding: 5px;
+    }
+    input[type='submit'], input[type='reset'], input[type='button'], button{
+       background-color: #385d81;
+       border:0; outline:0;
+       color:white; 
+       border-radius: 3px;
+       padding:10px 20px;
+       margin:5px;
+    }
+    td, th { 
+      padding:5px 10px; 
+      text-align:center;
+    }
+ </style>
+
+  <script>
+    let patternName = /[가-힣ㄱ-ㅎㅏ-ㅣ]/ //한글패턴
+    let patternEngLo = /[a-zA-Z]/; 
+    var patternSpc = /[~`!@#$%^&*()_\-+={}\[\]|\\:;"'<>,\.?\/]/;
+    let patternNum = /[0-9]/; //숫자패턴
+    let patternEmail = /^\w{2,}@\w+(\.[a-zA-Z]+){1,2}$/;
+    function chk() {
+      
+      let name = frm.name.value.trim();
+      let email = frm.email.value.trim();
+      let pw = frm.pw.value.trim();
+      let pwchk = frm.pwchk.value.trim();
+      if(!name){
+        alert('이름은 필수 입력사항입니다.');
+        frm.name.focus();
+        return false;
+      }else if(patternSpc.test(name) || patternNum.test(name)){
+        alert('이름을 확인하세요. 이름에는 특수문자나 숫자의 사용이 불가.');
+        frm.name.focus();
+        return false;
+      }else if(name.length < 2){
+        alert('이름은 두글자 이상입니다.')
+        frm.name.focus();
+        return false;
+      }else if(!email){
+        frm.email.focus();
+        return false;
+      }else if(!patternEmail.test(email)){
+        alert('올바른 이메일을 입력하세요')
+      }else if(!pw){
+        frm.pw.focus();
+        return false;
+      }else if(!patternNum.test(str) || !patternEngUp.test(str) || !patternSpc.test(str) || str.length <4){
+
+      }
+      if(!pwchk){
+        frm.pwchk.focus();
+        return false;
+      }
+
+
+
+
+    }
+  </script>
+</head>
+<body>
+  <form action="" name="frm" onsubmit="return chk()">
+    <table>
+      <tr>
+        <td>이름</td>
+        <td><input type="text" name="name" placeholder="특수문자나 숫자X(2글자 이상)"></td>
+      </tr>
+
+      <tr>
+        <td>메일</td>
+        <td><input type="text" name="email" placeholder="메일형식에 맞추세요"></td>
+      </tr>
+
+      <tr>
+        <td>비밀번호</td>
+        <td><input type="password" name="pw"></td>
+      </tr>
+
+      <tr>
+        <td>비밀번호</td>
+        <td><input type="password" name="pwchk"></td>
+      </tr>
+
+      <tr>
+        <th colspan="3">
+          <input type="submit" value="회원가입">
+          <input type="reset" reset="취소">
+          <input type="button" value="로그인">
+        </th>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
