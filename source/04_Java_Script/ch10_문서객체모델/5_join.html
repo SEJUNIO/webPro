@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #wrap{
+      width:350px; 
+      margin: 50px auto;
+      border : 1px solid gray;
+      
+    }
+    #wrap p{
+      text-align: center;
+    }
+    #wrap input{
+      margin : 3px;
+    }
+  </style>
+  <script>
+    const confirmOpen = function (){
+      let confirm = open('5_confirm.html', '', 'width=600, height=600, left=100');
+      if(!confirm){
+        alert('팝업 차단 해제 필요함');
+      }
+    }
+  function chk(){
+    let idConfirmed = document.getElementById('idConfirmed').value; // "1"
+    let idTag = document.getElementById('id').value.trim();
+    if(idConfirmed != '1'){
+      alert('ID 중복확인 후 회원가입 가능합니다.');
+      return false;
+    }else if(!idTag.value.trim()){
+      alert('ID는 필수 입력 사항입니다');
+      idTag.focus();
+      return false;
+    }
+      return true;
+  }
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <form onsubmit="return chk()">
+      <input type="text" id="idConfirmed" value="0">
+    <p>아이디<input type="text" id="id">
+      <input type="button" value="중복확인" onclick="confirmOpen();">
+    </p>    
+    <p>
+      <input type="submit" value="회원가입">
+    </p>
+  </form>
+  </div>
+</body>
+</html>

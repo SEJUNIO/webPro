@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    img{
+      position: absolute;
+      z-index: -9;
+    }
+  </style>
+  <script>
+    window.onclick = function (){
+      let msg = document.querySelector('p.msg');  //p태그의 class 불러옴
+      let img = document.getElementsByTagName('img')[0]; //이미지태그 불러옴
+      let x = event.offsetX; //좌표
+      let y = event.offsetY; //좌표
+      msg.innerHTML = '좌표값:' + x + ',' + y; 
+      img.style.display = 'inline'; // block, inline-block, none 모두가능
+      img.style.left = x + 'px';  //x좌표
+      img.style.top = y + 'px'; //y좌표
+    };
+  </script>
+</head>
+<body>
+  <p class="msg">클릭하면 클릭한 곳으로 마차가 옮겨지고 좌표가 출력되요</p>
+  <img src="img/car.gif" alt="마차">
+</body>
+</html>

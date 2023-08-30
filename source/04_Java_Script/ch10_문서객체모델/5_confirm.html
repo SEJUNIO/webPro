@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    #wrap{
+      width:350px; 
+      margin: 50px auto;
+      border : 1px solid gray;
+      
+    }
+    #wrap p{
+      text-align: center;
+    }
+    #wrap input{
+      margin : 3px;
+    }
+  </style>
+  <script>
+    var idTag, openerIdTag;
+    window.onload = function(){
+    openerIdTag = opener.document.getElementById('id'); 
+    idTag = document.getElementsByName('id')[0];
+    idTag.value = openerIdTag.value;
+  };
+  function confirmOK(){
+    openerIdTag.value = idTag.value;
+    opener.document.getElementById('idConfirmed').value=1;
+    close();
+  }
+  
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <form>
+    <p>
+      ID<input type="text" name="id">
+      <input type="button" value="체크">
+    </p>
+    <p>
+      <button onclick="confirmOK();">아이디사용</button>
+    </p>
+  </form>
+  </div>
+</body>
+</html>
