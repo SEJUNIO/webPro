@@ -1,8 +1,8 @@
-import { Component } from 'react';
 import './App.css';
+import {Component} from 'react';
 import Subject from './components/Subject';
-import TOC from './components/TOC';
 import ReadContent from './components/ReadContent';
+import TOC from './components/TOC';
 
 class App extends Component{
   constructor(props){
@@ -17,8 +17,8 @@ class App extends Component{
         {id:3, title:'JavaScript', desc:'JavaScript is for Interactive.'},
         {id:4, title:'React', desc:'React is for UI.'},
       ],
-      welcome : {title:'Welcome', desc:'Hello, React!'},
-    };    
+      welcome : {title:'welcome', desc:'Hello, React!!!.'},
+    };
   }
   render(){
     console.log('App render 수행')
@@ -26,46 +26,44 @@ class App extends Component{
     if(this.state.mode === 'welcome'){
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
-      _article = <ReadContent title={_title}desc={_desc}></ReadContent>;
+      _article = <ReadContent title={_title}desc={_desc}></ReadContent>
     }else if(this.state.mode === 'read'){
       // var data = this.state.contents[this.state.selectd_content_id - 1];
       // _title = data.title;
       // _desc = data.desc;
-      for(var i=0; i<this.state.contents.length; i++){
-        var data = this.state.contents[i];
-        if(data.id === this.state.selectd_content_id){
-          _title = data.title;
-          _desc = data.desc;
-          break;
-        }
+    for(var i=0; i<this.state.contents.length; i++){
+      var data = this.state.contents[i];
+      if(data.id === this.state.selectd_content_id){
+        _title = data.title;
+        _desc = data.desc;
+        break;
       }
-      _article = <ReadContent title={_title}desc={_desc}></ReadContent>;
+    }
+    _article = <ReadContent title={_title}desc={_desc}></ReadContent>;
     }else if(this.state.mode === 'create'){
       //_article = <CreateContent></CreateContent>
     }else if(this.state.mode === 'update'){
-      //_article = <UpdateContent></UpdateContent>
+    //_article = <UpdateContent></UpdateContent>
     }
     return(
-      <div> 
-        <Subject title={this.state.subject.title} 
-                    sub={this.state.subject.sub} 
-                    onChangePage={function(){
-                      this.setState({
-                        mode : 'welcome',
-                      });
-                    }.bind(this)}></Subject>
-        
+      <div>
+      <Subject title={this.state.subject.title}
+                sub={this.state.subject.sub}
+                onChangePage={function(){
+                  this.setState({
+                    mode : 'welcome',
+                  });
+                }.bind(this)}></Subject>
         <TOC data={this.state.contents}
-            onChangePage={function(id){
-              this.setState({
-                mode : 'read',
-                selectd_content_id : Number(id),
-              });
-            }.bind(this)}></TOC>
-        {_article}
+          onChangePage={function(id){
+            this.setState({
+              mode : 'read',
+              selectd_content_id : Number(id),
+            });
+          }.bind(this)}></TOC>
+          {_article}
       </div>
-    );
+      );
+    }
   }
-}
-
 export default App;
