@@ -1,0 +1,39 @@
+let memberArray = ['egoing', 'grahittie','leezhce'];  -- 리액트 배열
+var copyArray = [...memberArray]; -- 배열복사(깊은복사)
+
+-[단순 객체 생성]-
+ex).
+let kim = {
+	name : 'Kim GilDong',
+	first : 10,
+	second:20,
+	third : 30	
+﻿    	sum : function(){
+        	return this.first + this.second+this.third
+    },
+};
+let lee = {
+    name : 'Kim GilDong', //생성자함수 이용시는 앞에 this. //class이용시 constructor 변수 설정 상속시에도 동일
+    first : 10,
+    second : 20,
+    thirth:10,
+    sum : function(){
+        return this.first + this.second + this.thirth;
+    },
+};
+console.log('kim.sum() :', kim.sum());
+console.log('lee.sum() :', lee.sum());
+
+var thatDay = new Date('2022-01-01');
+console.log('년도 :', thatDay.getFullYear());
+console.log('월 :', thatDay.getMonth()+1);
+console.log(thatDay);
+console.log('Date : ', Date);
+
+[객체의 상속]
+_proto_이용
+--객체끼리도 상속관계를 맺을 수 있다.
+subObj._proto_ = superObj // 표준으로 인정받지는 못하나 브라우저에서는 제공
+
+[objcet.create()이용 ]
+﻿var subObj = Object.create(superObj); // 이 방법이 더 추천

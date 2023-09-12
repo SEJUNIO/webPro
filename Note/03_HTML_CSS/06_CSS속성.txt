@@ -1,0 +1,59 @@
+[CSS속성]
+
+[URL]
+- URL : Background-img 속성의 속성값으로 많이 사용됩니다. 이 경우 배경이미지의 경로를 나타냅니다.
+
+[display]
+display : 화면에 어떻게 보이는지를 설정하는 속성. 다양한 속성값이 있지만, 주로 몇가지만 많이 사용
+- block : div태그, p태그, li태그 - 높이의 속성이 있다.
+- inline : span태그 - 높이의 속성이 없다.
+- inline-block : block의 속성을 갖고 옆으로 붙여 나가는것 - 높이의 속성이 있다. 
+
+[visibility]
+display 속성의 none속성값과 비교하며 이해하자
+-visibility : hidden 은 공간은 확보, 안보임
+-display : none 은 공단도 사라짐
+
+[opacity]
+투명도를 조절하는 속성. 여러 곳에 유용하게 사용된다.
+
+[margin 및 padding]
+margin 및 padding 속성은 아주 중요한 속성으로 정확한 속성의 의미를 알자.
+
+[box-sizing]
+box-sizing속성을 이용하면 전체 사이즈의 크기를 변경할 수 있습니다.
+
+[border]
+border속성을 변경할 수 있습니다.
+
+[﻿글자 관련된 속성들] 
+font-family(글꼴), 
+font-size(크기), 
+font-style(이텔릭체), 
+font-weight(진하게), 
+line-height(행간격 조정용도나 세로축에 대한 정렬 용도), 
+text-align(글자에 대한 정렬), 
+text-decoration(간단한 글꼴 모양의 속성)
+
+[가운데 정렬 예시]
+﻿div{
+	width:300px;height:300px; background-color:red;
+	color:white;
+	font-size:4em;
+	font-weight:bold;
+	text-align:center;
+	line-height:300px; /*가운데 정렬 용도 - 수직가운데정렬은 없다 */
+	border-radius:150px;
+}
+
+﻿웹 폰트 : 
+인터넷만 연결되어 있다면, 다양한 폰트를 웹사이트 방문자에게 제공할 수 있도록 고안된 폰트가 웹폰트 입니다. 
+웹사이트를 방문하는 순간, 웹 폰트를 다운받아 웹사이트를 구성 합니다.  (ex) http://fonts.google.com
+로컬폰트 (무료다운: 구글이나 네이버 폰트, 그외 사이트)
+
+[position]
+﻿1 - absolute 속성값 -relative가 있어야지만 사용가능(relative가 부모)
+2 - fixed 속성값 -- 스크롤을 해도 화면상에서 움직이지 않고 fixed 된다.
+3 - static 속성값 
+4 - relative 속성값 
+5 - relative 와 absolute의 혼합 사용

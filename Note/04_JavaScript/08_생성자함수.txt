@@ -1,0 +1,66 @@
+[생성자 함수]
+생성자는 객체지향 프로그램에서 객체를 생성할때 호출되는 단위 메서드.
+
+var 객체명 = new 생성자함수명(속성값들);
+new 키워드로 객체를 생성하므로 생성자함수. 생성자 함수로 만든 객체를 객체 또는 인스턴스라 부른다.
+﻿해당 객체가 어떠한 생성자 함수로 생성됐는지 확인할 때 instanceof 키워드를 사용할 수 있다.
+
+생성자함수 예시 //
+﻿<script>
+        function Student(name, kor, eng, mat) {
+            this.name = name;  // this는 현재 객체의 속성을 가리킬 때 씀, name은 파라미터로 받은 지역변수
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+	    this.sum = kor+eng+mat;
+            this.getSum = function () { return this.kor + this.eng + this.mat; };
+            this.getAvg = function () { return Math.round(this.getSum() / 3*10)/10; };
+            this.toString = function () { return this.name + '\t' + this.getSum() + '\t' + this.getAvg(); };
+        }
+        var student = new Student('윤하린', 100, 96, 98);
+        var students = [];
+        students.push(new Student('홍길동', 80, 70, 50));
+        students.push(new Student('김길동', 80, 70, 50));
+        students.push(new Student('김홍동', 100, 70, 50));
+        var output = '이름\t총점\t평균\n';
+        for (var i in students) {
+            output += students[i].toString() + '\n';
+        }
+        alert(output);
+console.log ('student는 Student 생성자함수의 인스턴스인지 '+(student instanceof Student));
+        console.log ('student는 Array 생성자함수의 인스턴스인지 ' + (student instanceof Array));
+    </script>
+
+[프로토 타입]
+일반함수를 사용하여 객체를 만든 것과 생성자함수를 사용하여 객체를 만드는것의 차이점이 없습니다.
+﻿Student의 경우 속성은 모든 객체가 다른 속성을 가지지만 메소드는 모두 같습니다. 
+각 객체를 생성할 때마다 동일한 함수를 계속 생성하게 된다 이러한 문제를 해결하고자 포르토타입을 이용한다.
+프로토타입이란, 생성자 함수로 생성된 객체가 공통으로 가지는 공간.
+메서드를 모두 프로토타입 안에 넣어준다. 프로토타입은 우리가 만드는 것이 아니다. 
+함수안에 자동으로 만들어지는 배열 arguments와 마찬가지로 자바스크립트의 모든 함수는 prototype 객체를 갖는다.
+
+프로토 타입 예시 //
+﻿script>
+        function Student(name, kor, eng, mat) {
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+        }
+        Student.prototype.getSum = function () { return this.kor + this.eng + this.mat; };
+        Student.prototype.getAvg = function () { return Math.round(this.getSum() / 3 * 10) / 10; };
+        Student.prototype.toString = function () { return this.name + '\t' + this.getSum() + '\t' + this.getAvg(); };
+        var students = [];
+        students.push(new Student('홍길동', 80, 70, 50));
+        students.push(new Student('김길동', 80, 70, 50));
+        students.push(new Student('김홍동', 100, 70, 50));
+        var output = '이름\t총점\t평균\n';
+        for (var i in students) {
+            output += students[i].toString() + '\n';
+        }
+        alert(output);
+</script>
+
+[﻿new 키워드]
+﻿new 키워드로 함수를 호출하면 객체를 위한 공간을 만들고 this 키워드가 해당 공간을 의미한다. 그렇지 않는 경우, 
+일반적으로 this 키워드를 사용하면 window 객체를 나타낸다. Window 객체에 속성을 추가한 것이 된다.
