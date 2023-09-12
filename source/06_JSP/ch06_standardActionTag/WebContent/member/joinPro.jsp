@@ -3,12 +3,13 @@
 <%@page import="java.sql.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% String conPath = request.getContextPath(); %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link href="join.css" rel="stylesheet" type="text/css">
+	<link href="<%=conPath %>/css/join.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<%
@@ -56,8 +57,8 @@
 		<h2>이메일 : <%=email.equals("") ? "-":email %></h2>
 		<h2>메일수신동의 : <%=mailSend!=null? Arrays.toString(mailSend) : "모두거부"%></h2>
 		<h2>가입IP : <%=request.getRemoteAddr() %></h2>
-		<button class="joinBtn_style">로그인</button>
+		<button class="joinBtn_style" onclick="location.href='<%=conPath%>/member/login.jsp'">로그인</button>
 	</div>
-	<%@include file="footer.jsp" %>
+	<jsp:include page="../member/footer.jsp"/>
 </body>
 </html>

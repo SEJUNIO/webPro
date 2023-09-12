@@ -6,48 +6,26 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<style>
-	#wrap{
-	width:430px;
-	border: 1px solid #D4A190;
-	margin : 10px auto;
-	}
-	table{
-	width:70%;
-	margin : auto;
-	}
-	td{
-	text-align : center;
-	padding : 2px 5px;
-	margin : auto;
-	}
+		body { background-color: lightyellow;}
+		td{text-align: center; padding:2px 5px;}
+		#msg {color:red; text-align: center;}
 	</style>
 </head>
 <body>
- <div id="wrap">
- <form action="loginPro.jsp">
- 	<table>
- 		<tr>
- 		<td>아이디</td>
- 		<td><input type="text" name="name"></td>
- 		</tr>
- 		
- 		<tr>
- 		<td>패스워드</td>
- 		<td><input type="password" name="pw"></td>
- 		</tr>
- 		
- 		<tr>
- 		<td>
- 		</td>
- 		</tr>
- 		
- 		<tr>
- 		<td colspan="3">
- 		<input type="submit" value="로그인">
- 		</td>
- 		</tr>
- 	</table>
-</form>
- </div>
+	<form action="loginPro.jsp" method="post">
+		<table>
+			<tr><th>아이디</th><td><input type="text" name="id"></td></tr>
+			<tr><th>비밀번호</th><td><input type="password" name="pw"></td></tr>
+			<tr><td colspan="2"><input type="submit" value="로그인"></td></tr>
+		</table>
+	</form>
+	<div id="msg">
+		<%
+			String msg = request.getParameter("msg");
+			if(msg!=null){
+				out.print(msg);
+			}
+		%>
+	</div>
 </body>
 </html>
