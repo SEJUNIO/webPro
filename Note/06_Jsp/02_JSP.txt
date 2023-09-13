@@ -1,0 +1,41 @@
+[JSP]
+html문서 안에 동적인 웹.어플리케이션을 만들기 위해 jsp코드 삽입하고 확장자를 jsp로 
+
+[특징]
+동적 웹 어플리케이션 컴포넌트, jsp확장자, 클라이언트의 요청에 동적으로 작동하고, 응답은 html이용
+jsp는 서블릿으로 변환되어 실행
+
+[JSP 아키텍처]
+jsp 파일(hello.jsp) -–(java파일로변환)--> java file(hello_jsp.java) --(컴파일)--> class 파일(hello_jsp.class)
+
+[jsp태그들]
+지시자	: <%@	   %>	: 페이지 속성 ex.import, page
+주석	: <%--	  --%>  ; 응답 페이지에서는 이 주석은 보이지 않는다. WAS에서 이 주석은 제거하고 응답페이지를 만든다. cf. HTML 주석과 JSP 주석과 비교해 보자
+선언	: <%!	   %>	: 전역변수 및 메소드 선언
+표현식	: <%=	   %>	: 결과값 출력
+스크립트릿 : <%	   %>	: JAVA 코드
+액션태그    : <jsp:action></jsp:action> : 표준액션태그  ex.파일연결 및 자바빈 연결
+<c:set></c:set>          : 커스텀액션태그
+
+[내부객체]
+개발자가 객체를 생성하지 않고 바로 사용할 수 있는 객체가 내부객체
+JSP에서 제공되는 내부객체는 JSP컨데이터에 의해 Servlet으로 변화할 때 자동으로 객체 생성
+[입출력]
+request : 웹브라우저를 통해 서버에 어떤 정보를 요청하는 것
+getRemoteAddr() : 웹서버에 연결한 클라이언트의 IP주소
+request.getContextPath() : contextPath를 리턴
+getParameter(String name) : name에 해당하는 파라미터 값을 구함.
+getParameterNames() : 모든 파라미터 이름을 구함.
+getParameterValues(String name) : name에 해당하는 파라미터값들을 구함.
+getContextPath() : 웹어플리케이션의 컨텍스트 패스(http://localhost:8181/prjName/folderName/ex.jsp중 /prjName)를 얻습니다.
+getMethod() : get방식과 post방식을 구분할 수 있습니다.
+getSession() : 세션 객체를 얻습니다.
+getRequestURL() : 요청 URL를 얻습니다.
+getRequestURI() : 요청 URI를 얻습니다. 
+response : 웹브라우저의 요청에 응답하는 것
+application : JSP 페이지가 속하는 웹 애플리케이션에 관련된 기능
+session : 세션에 관련된 기능
+exception : 익셉션 객체
+page : 해당 페이지의 전체적인 속성 지정.
+include : 별도의 페이지를 현재 페이지에 사용 (footer 등 모든 페이지에서 반복되는 작업들에 이용)
+taglib : 태그라이브러리(사용자가 만든 tag들)의 태그 사용. 태그라이브러리를 사용하기 위해 taglib지시자 사용
