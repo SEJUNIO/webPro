@@ -1,0 +1,22 @@
+﻿[문서 객체 모델]
+태그, 문서객체, 노드
+태그를 자바스크립트에서 이용할 수 있는 객체로 만든 것이 문서 객체.
+
+[﻿Document 객체의 노드 생성 ]
+document 객체의 노드 생성 메소드 
+createElement(TagName) - 요소 노드를 생성
+createTextNode(text) - 텍스트 노드를 생성
+
+[문서 객체의 연결 메소드]
+appendChild(node) - 객체에 노드를 연결
+
+﻿[문서 객체 가져오기]
+이미 존재하는 HTML 태그를 자바스크립트로 가져오는 방법 중 id로 가져오기
+getElementById(id) 태그의 id속성이 id와 일치하는 문서 객체를 가져온다.
+getElementsByName(name); 태그의 name 속성이 name과 일치하는 문서 객체를 배열로 가져온다.
+﻿getElementsByClassName(“class명”) : 클래스 이용하여 문서객체 가져오기.
+﻿document.querySelector(선택자) ; 선택자로 가장 처음 선택되는 문서 객체를 가져온다
+document.querySelectorAll(선택자); 선택자로 선택되는 문서 객체를 배열로 가져옵니다
+
+[﻿문서 객체 제거 ]
+removeChild(child)

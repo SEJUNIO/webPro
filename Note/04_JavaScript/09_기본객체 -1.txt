@@ -1,0 +1,65 @@
+[기본객체]
+﻿Number : 숫자 객체
+String : 문자열을 다루기 위한 객체
+Array : 배열을 만들어 주는 객체
+Date : 날짜와 시간을 처리하기 위한 객체
+Math : 수학 계산을 위한 객체
+
+[기본자료형과 객체의 차이점]
+기본 자료형과 객체는 자료형이 분명 다르지만 두가지 모두 값을 출력한다.각자의 속성과 메소드도 있다.
+속성과 메소도는 객체만이 가질 수 있지만 기본 자료형에도 속성과 메소드가 있다.
+기본 자료형의 속성이나 메소드를 사용하면 기본 자료형이 자동으로 객체로 변환.
+
+[object객체]
+자바스크립트의 최상위 객체
+(오브젝트 생성- 예시)
+﻿var object = {};
+var object = new Object();
+
+[object 객체의 메소드]
+constructor() - 객체의 생성자 함수를 나타낸다.
+toString() - 객체를 문자열로 바꿉니다.
+valueOf() - 객체의 값을 나타냅니다.
+
+[number객체 메소드]
+toExponential() - 숫자를 지수 표시로 나타낸 문자열을 리턴
+toFixed() - 숫자를 고정 소수점 표시로 나타낸 문자열을 리턴
+toPrecision() - 숫자를 길이에 따라 지수 표시 또는 고정 소수점 표시로 나타낸 문자열을 리턴
+
+[String 객체의 속성]
+length - 문자열의 길이를 나타낸다.
+
+[String 객체의 메소드]
+charAt(position) - position에 위치하는 문자를 리턴
+charCodeAt(position) - position에 위치하는 문자의 유니코드 번호를 리턴
+concat(args) - 매개변수로 입력한 문자열을 이어서 리턴
+indexOf(searchString, position) 앞에서 부터 일치하는 문자열의 위치를 리턴
+lastindexOf(searchString, position) - 뒤에서부터 일치하는 문자열의 위치를 리턴
+match(egExp) - 문자열 내에 regExp가 있는지 확인.
+replace(regExp, replacement) - regExp를 replacement로 바꾼뒤 리턴
+search(regExp) - regExp와 일치하는 문자열의 위치를 리턴
+slice(start, end) - 특정 위치의 문자열을 추출해 리턴
+split(separator, limit) - separator로 문자열을 잘라서 배열을 리턴
+substr(start, count) - start부터 count만큼 문자열을 잘라서 리턴
+substring(start, end) - start부터 end까지 문자열을 잘라서 리턴
+toLowerCase() - 문자열을 소문자로 바꾸어 리턴
+toUpperCase() - 문자열을 대문자로 바꾸어 리턴
+
+[Array객체]
+-Array 생성자 함수
+Array() - 빈 배열을 만듭니다.
+Array(number) - 매개변수만큼의 크기를 가지는 배열을 만듭니다.
+Array(mixed ... mixed) - 매개변수를 배열로 만듭니다.
+
+[Array 객체의 속성]
+length - 배열 요소의 개수를 알아냅니다.
+
+
+
+
+
+
+
+
+
+

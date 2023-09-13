@@ -1,0 +1,55 @@
+[브라우저 객체 모델]
+브라우저 객체 모델은 웹 브라우저와 관련된 객체의 집합을 의미
+
+[window객체]
+window객체는 브라우저 기반 자바 스크립트의 최상위 객체. 지금까지 함수처럼 사용한 
+alert(), prompt() 함수 모두 window객체의 메소드이다. 
+var 키워드로 선언한 일반 변수도 모두 window객체의 속성이 된다.
+open(URL, name, features, replace) - 새로운 window 객체 생성
+﻿URL : 열고자 하는 HTML 페이지의 URL
+name : 윈도우 간 통신하는데 사용하는 윈도우 이름 또는 target속성
+features : 윈도우 출력 모양을 지정하는 옵션
+
+[윈도 형태 옵션]
+height - 새 윈도의 높이 (입력가능한값=픽셀값)
+width -  새 윈도의 너비 (입력가능한값=픽셀값)
+location - 주소 입력창의 유무 (입력가능한값=yes, no 1, 0)
+menubar - 메뉴의 유무 (입력가능한값=yes, no, 1, 0)
+resizable - 화면 크기 조절 가능 여부 (입력가능한값=yes, no, 1, 0)
+status - 상태표시줄의 유무 (입력가능한값=yes, no, 1, 0)
+toolbar - 상태표시줄의 유무 (입력가능한값=yes, no, 1, 0)
+
+﻿indow의 이름은 다음과 같은 경우 사용되기도 한다 open() 메서드는 새로운 window 객체를 생성하는 메서드. 
+단지 팝업창을 여는 것에서 끝나지 않고 윈도우 객체를 리턴한다. 
+따라서 다음의 예제처럼 새로운 윈도 객체에 접근해 속성과 메서드를 사용할 수 있다.
+
+[window 객체의 메소드]
+moveBy(x, y) - 윈도의 위치를 상대적으로 이동
+moveTo(x, y) - 윈도의 위치를 절대적으로 이동
+resizeBy(x, y) - 윈도의 크기를 상대적으로 지정
+resizeTo(x, y) - 윈도의 크기를 절대적으로 지정
+scrollBy(x, y) - 윈도 스크롤의 위치를 상대적으로 이동
+scrollTo(x,y) - 윈도 스크롤의 위치를 절대적으로 이동
+focus() - 윈도에 초점을 맞춤
+blur() - 윈도에 초점을 제거
+close() - 윈도를 닫음.
+[﻿screen 객체]
+s﻿creen 객체는 웹 브라우저의 화면이 아니라 운영체제 화면이 속성을 가지는 객체
+
+﻿[location 객체]
+브라우저의 주소 표시줄과 관련된 객체
+
+[location 객체의 속성]
+href - 문서의 URL주소 
+host - 호스트 이름과 포트번호 (예시/localhost:30763)
+hostname - 호스트 이름 (예시/localhost)
+port - 포트번호 (예시/307630
+pathname - 디렉토리 경로 (예시/Projects/Location.html)
+hash - 앵커이름(#~) (예시/#beta)
+search - 요청 매개변수 (예시/?param=10)
+protocol - 프로토콜 종류 (예시/http:)
+
+[location 객체의 메소드]
+assign(link) - 현재 위치를 이동 
+reload() - 새로고침
+replace(link) - 현재 위치를 이동
