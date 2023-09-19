@@ -8,19 +8,19 @@ public class CustomerDto {
 	private String cpw;
 	private String cname;
 	private String ctel;
-	private String cmail;
+	private String cemail;
 	private String caddress;
 	private Date cbirth;
 	private String cgender;
 	private Timestamp crdate;
 	public CustomerDto() {}
-	public CustomerDto(String cid, String cpw, String cname, String ctel, String cmail, String caddress, Date cbirth,
+	public CustomerDto(String cid, String cpw, String cname, String ctel, String cemail, String caddress, Date cbirth,
 			String cgender, Timestamp crdate) {
 		this.cid = cid;
 		this.cpw = cpw;
 		this.cname = cname;
 		this.ctel = ctel;
-		this.cmail = cmail;
+		this.cemail = cemail;
 		this.caddress = caddress;
 		this.cbirth = cbirth;
 		this.cgender = cgender;
@@ -50,11 +50,11 @@ public class CustomerDto {
 	public void setCtel(String ctel) {
 		this.ctel = ctel;
 	}
-	public String getCmail() {
-		return cmail;
+	public String getCemail() {
+		return cemail;
 	}
-	public void setCmail(String cmail) {
-		this.cmail = cmail;
+	public void setCemail(String cemail) {
+		this.cemail = cemail;
 	}
 	public String getCaddress() {
 		return caddress;
@@ -82,7 +82,7 @@ public class CustomerDto {
 	}
 	@Override
 	public String toString() {
-		return "CustomerDto [cid=" + cid + ", cpw=" + cpw + ", cname=" + cname + ", ctel=" + ctel + ", cmail=" + cmail
+		return "CustomerDto [cid=" + cid + ", cpw=" + cpw + ", cname=" + cname + ", ctel=" + ctel + ", cemail=" + cemail
 				+ ", caddress=" + caddress + ", cbirth=" + cbirth + ", cgender=" + cgender + ", crdate=" + crdate + "]";
 	}
 }

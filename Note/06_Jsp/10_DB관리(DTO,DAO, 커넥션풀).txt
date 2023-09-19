@@ -1,0 +1,36 @@
+[DAO]
+Date Access Object
+데이터 베이스에 접속해서 데이터 추가, 삭제, 수정 등 작업하는 클래스
+별도로 Try-Catch를 해주어야 한다.
+일반적 jsp 혹은 servlet 페이지 내에 위 로직을 함께 기술할 수 있으나 유지보수 및 코드의 모듈화를 위해 별도의 DAO클래스를 만들어 사용
+
+﻿public static final int SUCCESS = 1; // 회원가입, 정보수정 할 때
+public static final int FAIL = 0;    // 회원가입, 정보수정 할 때
+public static final int LOGIN_SUCCESS = 1; // 로그인 성공
+public static final int LOGIN_FAIL_ID = -1; // 로그인 오류(ID오류)
+public static final int LOGIN_FAIL_PW = 0;  // 로그인 오류(PW오류) 
+public static final int MEMBER_EXISTENT = 0; // 있는(중복된) ID
+public static final int MEMBER_NONEXISTENT = 1; // 없는(사용가능한) ID	
+public static MemberDao instance; //자기가 자기 클래스를 참조하고 있는 변수
+
+[DTO]
+Date Transfer Object
+DAO클래스를 이용하여 데이터 베이스에서 데이터를 관리할때 데이터를 일반적인 변수에 할당 작업 할 수 있으나 
+해당 데이터의 클래스 객체를 만들어 사용, 데이터 하나로 모아 객체에 담는다.
+매개변수없는생성자, 생성자함수, getter&setter , toString
+
+[커넥션 풀]
+클라이언트에서 다수의 요청이 발생할 경우 데이터베이스에 부하가 발생한다.
+이 문제를 해결하기 위해 커넥션 풀 기법을 사용
+tomcat 컨테이너가 데이터베이스 인증을 하도록 context.xml 파일에 아래의 코드 추가
+﻿<Resource 
+		auth="Container"
+		driverClassName = "oracle.jdbc.driver.OracleDriver"
+		url = "jdbc:oracle:thin:@localhost:1521:xe"
+		username = "scott"
+		password = "tiger"
+		name = "jdbc/Oracle11g" 
+		type = "javax.sql.DataSource"
+		maxActive = "10"
+		maxWait = "1000"
+	/>
