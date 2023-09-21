@@ -10,7 +10,10 @@
 	<link href="<%=conPath%>/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<%request.setCharacterEncoding("utf-8"); %>
+	<%
+	request.setCharacterEncoding("utf-8"); 
+	String pageNum = request.getParameter("pageNum");
+	%>
 	<jsp:useBean id="dto" class="com.lec.ex.dto.BoardDto"/>
 	<jsp:setProperty property="*" name="dto"/>
 	<% //들어온 파라미터 : bid, bname, btitle, bcontent, bemail, bpw
@@ -22,8 +25,8 @@
 	%>		 
 			<script>
 				alert('글수정 성공');
-				//location.href='<%=conPath%>/board/list.jsp'; //글수정 성공 후 글목록 페이지로
-				location.href='<%=conPath%>/board/content.jsp?bid=<%=dto.getBid()%>&after=u';
+				//location.href='<%=conPath%>/board/list.jsp?pageNum=<%=pageNum%>'; //글수정 성공 후 글목록 페이지로
+				location.href='<%=conPath%>/board/content.jsp?bid=<%=dto.getBid()%>&after=u&pageNum=<%=pageNum%>';
 			</script>
 		 <%}else{%>
 			 <script>

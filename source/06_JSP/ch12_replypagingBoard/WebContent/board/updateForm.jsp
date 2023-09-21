@@ -12,11 +12,13 @@
 </head>
 <body>
 	<%
+		String pageNum = request.getParameter("pageNum");
 		int bid = Integer.parseInt(request.getParameter("bid"));
 		BoardDao bDao = BoardDao.getInstance();
 		BoardDto dto = bDao.getBoardNotHitUp(bid); //조회수 안 올리고 dto 가져오기		
 	%>
 	<form action="<%=conPath %>/board/updatePro.jsp" method="post">
+	<input type="hidden" name="pageNum" value="<%=pageNum%>">
 		<input type="hidden" name="bid" value="<%=bid %>">
 		<table>
 		<caption><%=bid %>번글 수정</caption>
@@ -55,7 +57,7 @@
 			<input type="submit" value="글수정" class="btn">
 			<input type="reset" value="취소" class="btn" onclick="history.back()">
 			<input type="button" value="목록" class="btn"
-						onclick="location.href='<%=conPath %>/board/list.jsp'">
+						onclick="location.href='<%=conPath %>/board/list.jsp?pageNum=<%=pageNum%>'">
 		</tr>
 		</table>
 	</form>

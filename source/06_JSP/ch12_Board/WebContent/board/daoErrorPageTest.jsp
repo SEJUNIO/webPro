@@ -27,11 +27,11 @@
 		int result = bDao.writeBoard(dto);
 		out.print(result == BoardDao.SUCCESS ? ":성공</Wh3>" : "실패</h3>");
 		out.print("<h3>6. 조회수 안 올리고, 글번호 dto가져오기</h3");
-		out.print("2번글:" + bDao.getBoardNotHitup(2) + "<br>");
+		out.print("2번글:" + bDao.getBoardNotHitUp(2) + "<br>");
 		out.print("<h3>4와5. 조회수 올리고, 글번호로 dto가져오기</h3>");
-		out.print("2번글 상세보기 :" + bDao.getContent(2) + "상세보기 hitUp 수행");
+		out.print("2번글 상세보기 :" + bDao.getBoardNotHitUp(2) + "상세보기 hitUp 수행");
 		out.print("<h3>7.글수정</h3>");
-		dto = bDao.getBoardNotHitup(2); //2번 글 정보
+		dto = bDao.getBoardNotHitUp(2); //2번 글 정보
 		dto.setBname("독특자");
 		dto.setBtitle("독특한 제목");
 		dto.setBcontent("독특한 본문 수정 하기");
