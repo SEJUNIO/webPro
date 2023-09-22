@@ -11,16 +11,21 @@
 	<link href="<%=conPath%>/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<%
-	String pageNum = request.getParameter("pageNum");
-	int bid = Integer.parseInt(request.getParameter("bid"));
-	BoardDao bDao = BoardDao.getInstance();
-	BoardDto originalDto = bDao.getBoardNotHitUp(bid);
-%>
-	원글 정보 : <%=originalDto %>
+	<%
+		// 넘어온 파라미터 : bid(원글의 글번호), pageNum
+		String pageNum = request.getParameter("pageNum");
+		int bid = Integer.parseInt(request.getParameter("bid"));
+		BoardDao bDao = BoardDao.getInstance();
+		BoardDto originalDto = bDao.getBoardNotHitUp(bid); // 원글의 정보
+	%>
 	<form action="<%=conPath%>/board/replyPro.jsp" method="post">
+		<input type="hidden" name="pageNum" value="<%=pageNum%>">
+		<input type="text" name="bid" value="<%=originalDto.getBid() %>"> <!-- 원글 -->
+		<input type="text" name="bgroup" value="<%=originalDto.getBgroup() %>"> <!-- 원글 -->
+		<input type="text" name="bstep" value="<%=originalDto.getBstep() %>"> <!-- 원글 -->
+		<input type="text" name="bindent" value="<%=originalDto.getBindent() %>"> <!-- 원글 -->
 		<table>
-			<caption>답변글쓰기 jsp는 내일</caption>
+			<caption><%=bid%>번 글의 답변글 쓰기</caption>
 			<tr>
 				<th>작성자</th>
 				<td><input type="text" name="bname" required="required" autofocus="autofocus"></td>
@@ -46,7 +51,7 @@
 					<input type="submit" value="글쓰기" class="btn">
 					<input type="reset" value="초기화" class="btn">
 					<input type="button" value="목록" class="btn"
-								onclick="location.href='<%=conPath%>/board/list.jsp'">
+								onclick="location.href='<%=conPath%>/board/list.jsp?pageNum<%=pageNum%>'">
 				</td>
 			</tr>
 		</table>

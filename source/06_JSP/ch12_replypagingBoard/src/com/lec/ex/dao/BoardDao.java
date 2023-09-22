@@ -388,7 +388,7 @@ public class BoardDao {
 	// 사용자로부터 입력받는 답변글 정보 : bname, btitle, bcontent, bemail, bpw
 	// 원글에 대한 정보 : bgroup, bstep, bindent
 	// jsp에서 request.getRemoteAddr()로부터 : bip
-	public int reply(BoardDto dto) {
+	public int replyBoard(BoardDto dto) {
 		int result = FAIL;
 		preReplyStep(dto.getBgroup(), dto.getBstep()); // 답변글 저장 전단계
 		Connection        conn  = null;
@@ -405,11 +405,14 @@ public class BoardDao {
 			pstmt.setString(3, dto.getBcontent());
 			pstmt.setString(4, dto.getBemail());
 			pstmt.setString(5, dto.getBpw());
-			pstmt.setString(6, dto.getBip());
+			pstmt.setInt(6, dto.getBgroup());
+			pstmt.setInt(7, dto.getBstep() + 1);
+			pstmt.setInt(8, dto.getBindent() + 1);
+			pstmt.setString(9, dto.getBip());
 			result = pstmt.executeUpdate();
-			System.out.println("원글 쓰기 성공");
+			System.out.println("답변글 쓰기 성공");
 		} catch (SQLException e) {
-			System.out.println(e.getMessage() + " - 원글쓰다 예외 발생 : " + dto);
+			System.out.println(e.getMessage() + " - 답변글쓰다 예외 발생 : " + dto);
 		}finally {
 			try {
 				if(pstmt != null) pstmt.close();
