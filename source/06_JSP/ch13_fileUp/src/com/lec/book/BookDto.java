@@ -1,4 +1,4 @@
-package com.lex.book;
+package com.lec.book;
 
 import java.sql.Timestamp;
 public class BookDto {
@@ -7,19 +7,17 @@ public class BookDto {
 	private int bprice;
 	private String bimage1;
 	private String bimage2;
-	private String bimage3;
 	private String bcontent;
 	private int bdiscount;
 	private Timestamp brdate;
 	public BookDto() {}
-	public BookDto(int bid, String btitle, int bprice, String bimage1, String bimage2, String bimage3, String bcontent,
+	public BookDto(int bid, String btitle, int bprice, String bimage1, String bimage2, String bcontent,
 			int bdiscount, Timestamp brdate) {
 		this.bid = bid;
 		this.btitle = btitle;
 		this.bprice = bprice;
 		this.bimage1 = bimage1;
 		this.bimage2 = bimage2;
-		this.bimage3 = bimage3;
 		this.bcontent = bcontent;
 		this.bdiscount = bdiscount;
 		this.brdate = brdate;
@@ -54,12 +52,6 @@ public class BookDto {
 	public void setBimage2(String bimage2) {
 		this.bimage2 = bimage2;
 	}
-	public String getBimage3() {
-		return bimage3;
-	}
-	public void setBimage3(String bimage3) {
-		this.bimage3 = bimage3;
-	}
 	public String getBcontent() {
 		return bcontent;
 	}
@@ -81,7 +73,7 @@ public class BookDto {
 	@Override
 	public String toString() {
 		return "BookDto [bid=" + bid + ", btitle=" + btitle + ", bprice=" + bprice + ", bimage1=" + bimage1
-				+ ", bimage2=" + bimage2 + ", bimage3=" + bimage3 + ", bcontent=" + bcontent + ", bdiscount="
+				+ ", bimage2=" + bimage2 + ", bimage3=" + ", bcontent=" + bcontent + ", bdiscount="
 				+ bdiscount + ", brdate=" + brdate + "]";
 	}
 }
