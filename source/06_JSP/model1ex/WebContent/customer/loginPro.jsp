@@ -26,7 +26,7 @@
 			if(method.equals("null")){
 				response.sendRedirect(conPath + "/main/main.jsp");
 			}else{
-				response.sendRedirect(method + ".jsp");
+				response.sendRedirect(conPath + "/" + method + ".jsp");
 			}
 		}else if(result == CustomerDao.LOGIN_FAIL){			
 			response.sendRedirect("loginForm.jsp?msg="+msg);

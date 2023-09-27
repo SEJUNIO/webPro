@@ -84,26 +84,6 @@
 		out.print("<h2>책등록 실패</h2>");
 	}
 %>
-	<h3>책이름<%=btitle%></h3>
-	<h3>
-		책가격<del><%=bprice %></del>
-		<b>
-			<%if(bdiscount!=0){ %>
-				<%=bprice * (100-bdiscount) /100 %>원(<%=bdiscount %> 할인)
-			<%}else{%>
-		책가격<%=bprice%>원
-			<%}%>
-		</b>
-	</h3>
-	<h3>대표이미지 : <%=path%>/bookImg/<%=bimage1%></h3>
-	<h3>추가이미지 : <%=path%>/bookImg/<%=bimage2%></h3>
-	<img src="<%=conPath%>/bookImg/<%=bimage1%>" alt="대표이미지">
-	<img src="<%=conPath%>/bookImg/<%=bimage2%>" alt="추가이미지">
-	<h3>책설명<pre><%=bcontent%></pre></h3>
-	<hr>
-	<a href="ex1_listBoardStyle.jsp">책 전체 리스트(게시판 스타일)</a><br>
-	<a href="ex2_list.jsp">책 리스트 1page(게시판 스타일)</a><br>
-	<a href="ex3_listProduct_nopaging.jsp">책 전체 리스트(제품 리스트 스타일)</a><br>
-	<a href="ex4_list.jsp">책 리스트 1page(제품 리스트 스타일)</a><br>
+
 </body>
 </html>
