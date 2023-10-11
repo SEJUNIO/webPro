@@ -32,13 +32,14 @@ public class FrontController extends HttpServlet {
 		}else if(command.equals("/login.do")) { // DB를 통해 로그인 확인 및 세션 처리
 			service = new MLoginService();
 			service.execute(request, response);
-			// next파라미터 값에 따른 forward
-			String next = request.getParameter("next");
-			if(next == null) {
-				viewPage = "member/main.jsp";
-			}else {
-				viewPage = next;
-			}
+//			// next파라미터 값에 따른 forward
+//			String next = request.getParameter("next");
+//			System.out.println(next==null? "널" : next.equals("")? "빈스트링":next);
+//			if(next.equals("")) {
+//				viewPage = "member/main.jsp";
+//			}else {
+//				viewPage = next;
+//			}
 		}else if(command.equals("/joinView.do")) { // 화면가입 화면
 			viewPage = "member/join.jsp";
 		}else if(command.equals("/join.do")) { // 회원가입 DB처리후 로그인으로 가고 id엔 가입한 id가 출력
@@ -54,11 +55,16 @@ public class FrontController extends HttpServlet {
 //			service.execute(request, response);
 			viewPage = "member/modify.jsp";
 		}else if(command.equals("/modify.do")) {// 정보수정 DB처리후 세션도 수정
-			
+			service = new MModifyService();
+			service.execute(request, response);
+			viewPage = "member/main.jsp";
 		}else if(command.equals("/allView.do")) { // 전체 회원리스트
-			
+			service = new MAllViewService();
+			service.execute(request, response);
+			viewPage = "member/mAllView.jsp";
 		}else if(command.equals("/withdrawal.do")) { // 회원탈퇴
-			
+			service = new MWithdrawalService();
+			service.execute(request, response);
 		}
 		// 뷰로 forward
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
