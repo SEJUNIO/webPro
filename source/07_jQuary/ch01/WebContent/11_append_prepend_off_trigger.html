@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<style>
+		.red{color: red;}
+		.blue{color: blue;}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			let h1Cnt=0;
+		$('h1#h1').click(function(){
+			h1Cnt ++;
+			if(h1Cnt <6){
+				$(this).append('<span class="red">♥</span>');
+				$(this).prepend('<span class="red">♡</span>');
+			}else{
+				// 클릭한 횟수가 6회가 되면 click 이벤트 제거
+				$('h1#h1').off();
+			}
+		});
+		$('h1#h2').click(function(){
+			$('#h2').append('<span class="red">♥</span>');
+		});
+		setInterval(() => {  //강제이벤트 발생 3초마다...
+		 $('h1').last().trigger('click');      //first 첫번째 , last는 마지막	
+		}, 3000);
+		});
+	</script>
+</head>
+<body>
+	<h1 id="h1">좋아요 (5회 제한)</h1>
+	<h1 id="h2">좋아요</h1>
+</body>
+</html>

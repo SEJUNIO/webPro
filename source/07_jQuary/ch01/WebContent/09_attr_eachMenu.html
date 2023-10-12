@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<style>
+		ul{
+		overflow: hidden;
+		}
+		li{
+		list-style: none;
+		float: left;
+		padding: 5px;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('img').mousedown(function(){
+				$(this).attr('src', 'img/but2.gif').attr('alt', '마우스 눌렀을 때');
+			});
+			$('img').mouseup(function(){
+				$(this).attr('src', 'img/but1.gif').attr('alt','마우스를 뗏을 때');
+			});
+		});
+	</script>
+</head>
+<body>
+	<img src="img/but1.gif" alt="클릭전">
+	<img src="img/but2.gif" alt="클릭후">
+</body>
+</html>

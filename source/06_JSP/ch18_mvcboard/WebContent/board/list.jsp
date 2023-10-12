@@ -9,6 +9,17 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<link href="${conPath}/css/style.css" rel="stylesheet" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js""></script>
+	<script>
+		$(document).ready(function() {
+			$('tr').click(function(){
+				var bid = $(this).children().eq(0).text().trim();
+				if(!isNaN(Number(mid))){
+					location.href = '${conPath }/content.do?bid=${dto.bid}&pageNum=${pageNum}&bid='+bid;
+				}
+			});
+		});
+	</script>
 </head>
 <body>
 	<c:set var="SUCCESS" value="1"/>
@@ -60,9 +71,9 @@
 						&nbsp; &nbsp; &nbsp;
 					</c:if>
 					</c:forEach>
-					<a href="${conPath }/content.do?bid=${dto.bid}&pageNum=${pageNum}">
+					<%-- <a href="${conPath }/content.do?bid=${dto.bid}&pageNum=${pageNum}">--%>
 						${dto.btitle }
-					</a>
+					<!--  </a>-->
 					<c:if test="${dto.bhit > 10 }">
 						<b>( * )</b>
 					</c:if>

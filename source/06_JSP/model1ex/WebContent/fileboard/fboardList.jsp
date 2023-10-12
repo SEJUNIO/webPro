@@ -10,6 +10,16 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<link href="<%=conPath%>/css/style.css" rel="stylesheet" type="text/css">
+	<script>
+		$(document).ready(function() {
+			$('tr').click(function(){
+				var bid = $(this).children().eq(0).text().trim();
+				if(!isNaN(Number(fid))){
+					location.href = 'fboardContent.jsp?pageNum=<%=pageNum%>&fid='+fid;
+				}
+			});
+		});
+	</script>
 	<style>
 	#content_form{
 			height: 670px; 
@@ -60,8 +70,9 @@
 				if(dto.getFhit()>10){
 					out.print("<img src='../img/hot.gif'>");
 				}
-				out.print("<a href='fboardContent.jsp?fid="+dto.getFid()+"&pageNum="+pageNum+
-																			"'>"+dto.getFtitle()+"</a> ");
+				//out.print("<a href='fboardContent.jsp?fid="+dto.getFid()+"&pageNum="+pageNum+
+				//															"'>"+dto.getFtitle()+"</a> ");
+				out.print(d.getFtitle());
 				if(dto.getFilename()!=null){
 					out.print("<img src='../img/fileup.jpg' width='10'></td>");
 				}

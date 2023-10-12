@@ -8,6 +8,16 @@
 		$(document).ready(function() {
 			$('tr:even').css('background-color', '#cccccc'); // 0번째부터 짝수
 			$('tr:odd').css('background-color', '#FFFFAA'); // 0번째부터 홀수
+			$('tr').click(function(){
+				var no = $(this).children().eq(0).text().trim();
+				//alert('글번호 : ' + no + '/타입 : ' + typeof(no));
+				//Number('1') => 1 / Number('글번호') => NaN
+				if(isNaN(Number(no))){
+					alert('타이틀을 클릭했네');
+				}else{
+					location.href = '05_selector.html?no='+no;
+				}
+			});
 		});
 	</script>
 </head>
