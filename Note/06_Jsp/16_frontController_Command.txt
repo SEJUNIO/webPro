@@ -1,0 +1,12 @@
+[url-pattern]
+디렉터리 형태로 서버의 해당 컴포넌트를 찾아서 실행하는 구조.
+
+[frontController]
+클라이언트의 다양한 요청을 한곳으로 집중시켜, 개발 및 유지보수에 효율성을 극대화 
+요청을 받는 창구를 하나로 집중시켰다고 해도 무방하다.
+[요청1, 요청2, 요청3] -> 모든요청을 처리하는 서블릿(frontcontroller) -> service - > dao
+
+[command]
+클라이언트로부터 받은 요청들에 대해서, 서블릿이 작업을 직접 처리 하지 않고, 해당 클래스가 처리 하도록 한다.
+frontcontroller 한군데서 처리하면 소스가 너무 방대해짐. 세부적인 처리를 주로 한다.
+[요청1, 요청2, 요청3] -> frontcontroller - interface(service)/command -> dao

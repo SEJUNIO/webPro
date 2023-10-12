@@ -1,0 +1,10 @@
+[RequestDispatcher 클래스]
+내가 받은 요청을 내가 처리하지 않고 다른 쪽으로 위임해 버릴때 그것을 포워드라고 한다.
+서블릿 또는 JSP 에서 요청을 받은 후 다른 컴포넌트로 요청을 위임 할 수 있음.
+이 위임방법은 두개의 클래스를 이용한다.
+하나는 RequestDispatcher 클래스, 또하나는 HttpServletResponse 클래스
+
+[HttpServletResponse 클래스]
+RequestDispatcher 클래스와 동일하게 요청을 위임하는 클래스.
+RequestDispatcher  클래스와 차이점은 요청 받은 요청객체를 위임 받은 컴포넌트에 전달 하는 것이 아닌, 새로운 요청객체를 생성
+Request 객체는 파라미터에 값을 넣어 전달하기도 하고 attribute에 set하여 전달하기도 한다

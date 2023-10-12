@@ -1,0 +1,12 @@
+[mvc]
+model, view, controller를 뜻하며 개발 형태의 일종
+
+[model]
+데이터베이스와의 관계를 담당합니다. 클라이언트의 요청에서 필요한 자료를 데이터베이스로부터 추출하거나 수정하여 controller로 전달
+
+[view]
+사용자한테 보여지는 ui 화면 입니다. 주로 jsp파일로 작성하며 controller 에서 어떤 view 컴포넌트를 보여줄지 결정
+
+[controller]
+클라이언트의 요청을 받고, 적절한 model에 지시를 내리며,  model에서 전달된 데이터를 적절한  view에 전달 
+이렇게 분할하면 추후 유주보수에 좋음!
